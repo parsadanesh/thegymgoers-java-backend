@@ -11,3 +11,7 @@ This is a Java and Spring boot implementation of The Gymgoers backend.
 ---
 
 ## About The Project
+
+For my first full-stack project I created an application called  [TheGymGoers](https://github.com/parsadanesh/TheGymGoers/blob/main/ProjectREADME.md) using the `MERN` stack (`MongoDB`, `ExpressJS`, `ReactJS`, `NodeJS`).
+
+This project is a `Java` and `Spring Boot` implementation of the backend of  
