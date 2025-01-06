@@ -37,4 +37,19 @@ public class UserService {
 
         return addedUser;
     }
+
+    public User login(User userLogin){
+        if(!userRepository.findByUsername(userLogin.getUsername()).isEmpty()){
+            User user = userRepository.findByUsername(userLogin.getUsername()).get(0);
+
+            if (!(passwordEncoder.matches(userLogin.getPassword(), user.getPassword()))){
+                throw new IllegalArgumentException("Incorrect password: " + userLogin.getPassword());
+            }
+
+            return user;
+        }else {
+            throw new IllegalArgumentException("Incorrect Username: " + userLogin.getUsername());
+        }
+    }
+
 }
