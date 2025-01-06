@@ -16,7 +16,7 @@ This is a Java and Spring boot implementation of The Gymgoers backend.
 
 For my first full-stack project I created an application called [The GymGoers](https://github.com/parsadanesh/TheGymGoers/blob/main/ProjectREADME.md) using the `MERN` stack (`MongoDB`, `ExpressJS`, `ReactJS`, `NodeJS`).
 
-This project is a `Java` and `Spring Boot` implementation of the backend for The GymGoers. I have been given the opportunity to create a project in Java and Spring Boot to showcase. 
+This project is a `Java` and `Spring` implementation of the backend for The GymGoers. I have been given the opportunity to create a project in Java and Spring Boot to showcase. 
 
 As this was my first time using Spring Boot in general, I wanted to create a project that would really help solidify my 
 knowledge and skills with Spring and Spring Boot. By performing a migration of the backend from the MERN stack to Spring Boot 
