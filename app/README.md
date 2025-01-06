@@ -25,7 +25,7 @@ me the chance to improve on my previous implementation, and revaluate decision I
 
 ## Technologies Used
 
-Built in `Java 23` using `Spring Boot Version` and `Maven` with `MongoDB` for the data persistence layer.
+Built in `Java 23` using `Spring` and `Maven` with `MongoDB` for the data persistence layer.
 
 Built with the following dependencies: Spring Web, Rest Repositories, Spring Security, OAuth2 Resource Server
 

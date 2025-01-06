@@ -1,5 +1,7 @@
 package com.thegymgoers_java.app.controller;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import com.thegymgoers_java.app.model.User;
 import com.thegymgoers_java.app.service.UserService;
 import jakarta.validation.Valid;
@@ -15,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 public class UserContoller {
 
+    private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
     private final UserService userService;
 
     @Autowired
@@ -24,14 +28,15 @@ public class UserContoller {
 
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(@Valid @RequestBody User user){
-//        try {
+        try {
             User newUser = userService.register(user);
             if(newUser == null){
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("User Reg failed");
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("User with that email/username already exists");
             }
-//        }catch (Exception e) {
-//            System.out.println(e);
-//        }
+        }catch (Exception e) {
+            System.out.println(e);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Please Enter A Valid User details");
+        }
 
 
         return ResponseEntity.ok("User Reg Successful");

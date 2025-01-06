@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30e1a45c-3b5d-468e-af24-79e816783350" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/CustomSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/UserContoller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/thegymgoers_java/app/UserControllerTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/configuration/CustomSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/app/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/UserContoller.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/UserContoller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +54,7 @@
     "last_opened_file_path": "C:/Users/44747/SE_Training/thegymgoers-java-backend"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.UserControllerTests">
+  <component name="RunManager" selected="Application.AppApplication">
     <configuration name="AppApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.AppApplication" />
       <module name="app" />
@@ -135,9 +133,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AppApplication" />
         <item itemvalue="JUnit.UserControllerTests" />
         <item itemvalue="JUnit.UserControllerTests.creatingNullUser" />
-        <item itemvalue="Application.AppApplication" />
         <item itemvalue="JUnit.UserControllerTests.createUserHttpRequest" />
         <item itemvalue="JUnit.UserControllerTests.createUserWithSameUsername" />
       </list>

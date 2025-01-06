@@ -38,4 +38,12 @@ public class User {
     public String getEmailAddress(){
         return emailAddress;
     }
+
+    public void setPassword(String passwordToSet){
+        this.password = passwordToSet;
+    }
+
+    public String getPassword(){
+        return this.password;
+    }
 }

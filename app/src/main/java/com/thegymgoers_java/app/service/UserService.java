@@ -1,5 +1,6 @@
 package com.thegymgoers_java.app.service;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import com.thegymgoers_java.app.model.User;
 import com.thegymgoers_java.app.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,11 +10,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
+
+    private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
     @Autowired
     private UserRepository userRepository;
 
     public User register(User user){
-        User addedUser = userRepository.save(user);
+
 
         if(user.getUsername() == null || user.getUsername().trim().isEmpty() ||
                 user.getEmailAddress() == null || user.getEmailAddress().trim().isEmpty()){
@@ -26,7 +30,10 @@ public class UserService {
             return null;
         }
 
-        System.out.println(addedUser);
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        User addedUser = userRepository.save(user);
+
+//        System.out.println(addedUser);
 
         return addedUser;
     }
