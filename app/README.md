@@ -27,6 +27,8 @@ me the chance to improve on my previous implementation, and revaluate decision I
 
 Built in `Java 23` using `Spring Boot Version` and `Maven` with `MongoDB` for the data persistence layer.
 
+Built with the following dependencies: Spring Web, Rest Repositories, Spring Security, OAuth2 Resource Server
+
 ## Architecture
 
 Draft - React Frontend, Spring Boot backend, MongoDB Database, using rest controolers HTTP request my from the frontend are handled. The controllers are diffenied so depending on the type of request and the payload the request is routed to a specific controller method. That method talks to the service class which communicates with the repositorty interface which implements the mongoDB repository using spring boot dependence.
