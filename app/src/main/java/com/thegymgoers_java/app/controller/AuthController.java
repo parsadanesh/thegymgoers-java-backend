@@ -23,12 +23,14 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(@Valid @RequestBody User user){
         try {
+            // attempts to register the new user
             User newUser = userService.register(user);
+            // returns null if a user already exists with the email/username used to register
             if(newUser == null){
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("User with that email/username already exists");
             }
         }catch (Exception e) {
-            System.out.println(e);
+            // Exception thrown when the user's email/username is either empty or null
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Please Enter A Valid User details");
         }
         return ResponseEntity.ok("User Reg Successful");
@@ -37,11 +39,15 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@Valid @RequestBody User userToLogin){
         try{
+            // Attempts to login with a given user's details
             User user = userService.login(userToLogin);
+
+            // If a user is returned, the login was successful
             if(!(user == null)) {
                 return new ResponseEntity<>(user, HttpStatus.OK);
             }
         }catch (Exception e){
+            // Displays an error based on if the details are invalid
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 
         }

@@ -13,7 +13,6 @@ import java.util.List;
 @Service
 public class UserService {
 
-
     private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     @Autowired
@@ -21,37 +20,36 @@ public class UserService {
 
     public User register(User user){
 
-
+        // Throws an exception if the user's email/username used to register is null or empty
         if(user.getUsername() == null || user.getUsername().trim().isEmpty() ||
                 user.getEmailAddress() == null || user.getEmailAddress().trim().isEmpty()){
-            // throw some error
             throw new IllegalArgumentException("User details cannot not be empty or null");
-//            System.out.println("invalid username or email");
         }
 
-        // Returning null if user found with the same username or email address
+        // Returns null if a user already exists with the same email/username
         if(!userRepository.findByUsername(user.getUsername()).isEmpty() || !userRepository.findByEmailAddress(user.getEmailAddress()).isEmpty()){
             return null;
         }
 
+        // Encodes the password before saving the user to the database
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         User addedUser = userRepository.save(user);
-
-//        System.out.println(addedUser);
-
         return addedUser;
     }
 
     public User login(User userLogin){
+
+        // Throws an exception if the user's email/username used to register is null or empty
         if(userLogin.getUsername() == null || userLogin.getUsername().trim().isEmpty() ||
                 userLogin.getEmailAddress() == null || userLogin.getEmailAddress().trim().isEmpty()){
-            // throw some error
             throw new IllegalArgumentException("User details cannot not be empty or null");
         }
 
+        // Checks if a user exists with the same username
         if(!userRepository.findByUsername(userLogin.getUsername()).isEmpty()){
             User user = userRepository.findByUsername(userLogin.getUsername()).get(0);
 
+            // method checks if the raw password matches the stored encoded password
             if (!(passwordEncoder.matches(userLogin.getPassword(), user.getPassword()))){
                 throw new IllegalArgumentException("Incorrect password: " + userLogin.getPassword());
             }

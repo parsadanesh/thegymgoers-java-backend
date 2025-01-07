@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30e1a45c-3b5d-468e-af24-79e816783350" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/Exercise.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/Workout.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/thegymgoers_java/app/AuthControllerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/UserContoller.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/UserContoller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/com/thegymgoers_java/app/UserControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/thegymgoers_java/app/UserControllerTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,28 +50,14 @@
     "JUnit.UserControllerTests.createUserWithSameUsername.executor": "Run",
     "JUnit.UserControllerTests.creatingNullUser.executor": "Run",
     "JUnit.UserControllerTests.executor": "Run",
+    "JUnit.UserControllerTests.shouldReturnEmptyArray.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/44747/SE_Training/thegymgoers-java-backend"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.AuthControllerTests">
-    <configuration name="AuthControllerTests$LoginTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.thegymgoers_java.app.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.thegymgoers_java.app.AuthControllerTests" />
-      <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.AuthControllerTests$LoginTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.UserControllerTests.shouldReturnEmptyArray">
     <configuration name="AuthControllerTests$LoginTests.shouldReturn200IfLoginSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
@@ -142,13 +121,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserControllerTests.shouldReturnEmptyArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.thegymgoers_java.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.thegymgoers_java.app" />
+      <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.UserControllerTests" />
+      <option name="METHOD_NAME" value="shouldReturnEmptyArray" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserControllerTests.shouldReturnEmptyArray" />
         <item itemvalue="JUnit.AuthControllerTests" />
         <item itemvalue="JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUsernameIsNull" />
         <item itemvalue="JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUsernameIsEmpty" />
         <item itemvalue="JUnit.AuthControllerTests$LoginTests.shouldReturn200IfLoginSuccessful" />
-        <item itemvalue="JUnit.AuthControllerTests$LoginTests" />
       </list>
     </recent_temporary>
   </component>
@@ -168,7 +163,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/test/java/com/thegymgoers_java/app/UserControllerTests.java</url>
-          <line>83</line>
+          <line>90</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>

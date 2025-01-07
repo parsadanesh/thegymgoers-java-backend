@@ -27,33 +27,6 @@ public class UserContoller {
         this.userService = userService;
     }
 
-//    @PostMapping("/register")
-//    public ResponseEntity<String> registerUser(@Valid @RequestBody User user){
-//        try {
-//            User newUser = userService.register(user);
-//            if(newUser == null){
-//                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("User with that email/username already exists");
-//            }
-//        }catch (Exception e) {
-//            System.out.println(e);
-//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Please Enter A Valid User details");
-//        }
-//        return ResponseEntity.ok("User Reg Successful");
-//    }
-//    @PostMapping("/login")
-//    public ResponseEntity<?> loginUser(@Valid @RequestBody User userToLogin){
-//        try{
-//            User user = userService.login(userToLogin);
-//            if(!(user == null)) {
-//                return new ResponseEntity<>(user, HttpStatus.OK);
-//            }
-//        }catch (IllegalArgumentException e){
-//            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-//
-//        }
-//        return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
-//    }
-
     @GetMapping("/users/{username}/workouts")
     public ResponseEntity<?> getWorkouts(@PathVariable String username){
         System.out.println(username);
