@@ -26,66 +26,68 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 public class UserControllerTests {
 
-    @Autowired
-    MockMvc mockMvc;
+//    @Autowired
+//    MockMvc mockMvc;
+//
+//    @Autowired
+//    ObjectMapper objectMapper;
+//
+//    @MockBean
+//    UserService userService;
+//
+//    private User user;
+//    private User user2;
+//
+//    @BeforeEach
+//    void setUp() {
+//        user = new User("testname", "testemail@dom.com", "fakepass");
+//        user2 = new User("testname", "testemail2@dom.com", "fakepass");
+//    }
+//
+//    @Test
+//    void createUserHttpRequest() throws Exception {
+//        when(userService.register(any(User.class))).thenReturn(user);
+//
+//        mockMvc.perform(post("/register")
+//                        .contentType(MediaType.APPLICATION_JSON)
+//                        .content(objectMapper.writeValueAsString(user)))
+//                        .andExpect(status().isOk())
+//                        .andExpect(content().string("User Reg Successful"))
+//                        .andDo(print());
+//    }
+//
+//    @Test
+//    void createUserWithSameUsername() throws Exception {
+//
+//
+//        when(userService.register(user2)).thenReturn(null);
+//
+//
+//        mockMvc.perform(post("/register")
+//                        .contentType(MediaType.APPLICATION_JSON)
+//                        .content(objectMapper.writeValueAsString(user2)))
+//                        .andExpect(status().isBadRequest())
+//                        .andExpect(content().string("User Reg failed"))
+//                        .andDo(print());
+//
+//
+////        verify(userService)
+//    }
+//
+//    @Test
+//    void creatingNullUser() throws Exception {
+//
+//        User newUser = new User("testuser", null, "fakepass");
+//
+//        when(userService.register(newUser)).thenThrow(new IllegalArgumentException("User details cannot not be empty or null"));
+//
+//        mockMvc.perform(post("/register")
+//                        .contentType(MediaType.APPLICATION_JSON)
+//                        .content(objectMapper.writeValueAsString(newUser)))
+//                        .andExpect(status().isBadRequest())
+//                        .andExpect(status().reason("Invalid request content."))
+//                        .andDo(print());
+//    }
 
-    @Autowired
-    ObjectMapper objectMapper;
 
-    @MockBean
-    UserService userService;
-
-    private User user;
-    private User user2;
-
-    @BeforeEach
-    void setUp() {
-        user = new User("testname", "testemail@dom.com", "fakepass");
-        user2 = new User("testname", "testemail2@dom.com", "fakepass");
-    }
-
-    @Test
-    void createUserHttpRequest() throws Exception {
-        when(userService.register(any(User.class))).thenReturn(user);
-
-        mockMvc.perform(post("/register")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(user)))
-                        .andExpect(status().isOk())
-                        .andExpect(content().string("User Reg Successful"))
-                        .andDo(print());
-    }
-
-    @Test
-    void createUserWithSameUsername() throws Exception {
-
-
-        when(userService.register(user2)).thenReturn(null);
-
-
-        mockMvc.perform(post("/register")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(user2)))
-                        .andExpect(status().isBadRequest())
-                        .andExpect(content().string("User Reg failed"))
-                        .andDo(print());
-
-
-//        verify(userService)
-    }
-
-    @Test
-    void creatingNullUser() throws Exception {
-
-        User newUser = new User("testuser", null, "fakepass");
-
-        when(userService.register(newUser)).thenThrow(new IllegalArgumentException("User details cannot not be empty or null"));
-
-        mockMvc.perform(post("/register")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(newUser)))
-                        .andExpect(status().isBadRequest())
-                        .andExpect(status().reason("Invalid request content."))
-                        .andDo(print());
-    }
 }

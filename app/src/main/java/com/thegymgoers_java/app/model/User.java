@@ -5,6 +5,9 @@ import jakarta.validation.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Document("users")
 public class User {
 
@@ -23,6 +26,9 @@ public class User {
     @JsonProperty("password")
 //    @NotEmpty(message = "Account needs an password")
     private String password;
+
+    @JsonProperty("Workouts")
+    private List<Workout> workoutsList = new ArrayList<>();
 
 
     public User(String username, String emailAddress, String password){
@@ -45,5 +51,9 @@ public class User {
 
     public String getPassword(){
         return this.password;
+    }
+
+    public List<Workout> getWorkoutsList(){
+        return this.workoutsList;
     }
 }
