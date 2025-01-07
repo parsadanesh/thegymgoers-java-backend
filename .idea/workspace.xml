@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30e1a45c-3b5d-468e-af24-79e816783350" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/UserContoller.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/UserContoller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/thegymgoers_java/app/UserControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/thegymgoers_java/app/UserControllerTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,8 +57,9 @@
     "last_opened_file_path": "C:/Users/44747/SE_Training/thegymgoers-java-backend"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.UserControllerTests.shouldReturnEmptyArray">
-    <configuration name="AuthControllerTests$LoginTests.shouldReturn200IfLoginSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.AppApplication">
+    <configuration name="AppApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.AppApplication" />
       <module name="app" />
       <extension name="coverage">
         <pattern>
@@ -66,10 +67,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.thegymgoers_java.app.AuthControllerTests" />
-      <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.AuthControllerTests$LoginTests" />
-      <option name="METHOD_NAME" value="shouldReturn200IfLoginSuccessful" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -139,11 +136,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AppApplication" />
         <item itemvalue="JUnit.UserControllerTests.shouldReturnEmptyArray" />
         <item itemvalue="JUnit.AuthControllerTests" />
         <item itemvalue="JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUsernameIsNull" />
         <item itemvalue="JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUsernameIsEmpty" />
-        <item itemvalue="JUnit.AuthControllerTests$LoginTests.shouldReturn200IfLoginSuccessful" />
       </list>
     </recent_temporary>
   </component>

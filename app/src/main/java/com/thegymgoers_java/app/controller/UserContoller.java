@@ -29,11 +29,14 @@ public class UserContoller {
 
     @GetMapping("/users/{username}/workouts")
     public ResponseEntity<?> getWorkouts(@PathVariable String username){
-        System.out.println(username);
+        // Attempting to find list of workouts based on a user's username
         List<Workout> workoutList = userService.getWorkouts(username);
+
+        // ReturnS the valid list
         if(!(workoutList == null)){
             return new ResponseEntity<>(workoutList, HttpStatus.OK);
         }
+
         return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
 
     }
