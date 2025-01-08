@@ -47,7 +47,7 @@ public class UserService {
 
         // Checks if a user exists with the same username
         if(!userRepository.findByUsername(userLogin.getUsername()).isEmpty()){
-            User user = userRepository.findByUsername(userLogin.getUsername()).get(0);
+            User user = userRepository.findByUsername(userLogin.getUsername()).get();
 
             // method checks if the raw password matches the stored encoded password
             if (!(passwordEncoder.matches(userLogin.getPassword(), user.getPassword()))){
@@ -61,7 +61,7 @@ public class UserService {
     }
 
     public List<Workout> getWorkouts(String username){
-        User user = userRepository.findByUsername(username).getFirst();
+        User user = userRepository.findByUsername(username).get();
 //        System.out.println(user);
 
         return user.getWorkoutsList();

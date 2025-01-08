@@ -5,8 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30e1a45c-3b5d-468e-af24-79e816783350" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/configuration/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/configuration/jwt/AuthEntryPointJwt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/configuration/jwt/AuthTokenFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/configuration/jwt/JwtUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/configuration/services/UserDetailsImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/configuration/services/UserDetailsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/ERole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/payload/request/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/payload/request/NewUserRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/payload/response/JwtResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/payload/response/MessageResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/UserContoller.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/UserContoller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/configuration/CustomSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/configuration/CustomSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +37,7 @@
       <list>
         <option value="package-info" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -36,27 +56,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AppApplication.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.shouldReturn200IfLoginSuccessful.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUserDoesNotMatch.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUsernameIsEmpty.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUsernameIsNull.executor": "Run",
-    "JUnit.AuthControllerTests$RegisterTests.executor": "Run",
-    "JUnit.AuthControllerTests.executor": "Run",
-    "JUnit.UserControllerTests.createUserHttpRequest.executor": "Run",
-    "JUnit.UserControllerTests.createUserWithSameUsername.executor": "Run",
-    "JUnit.UserControllerTests.creatingNullUser.executor": "Run",
-    "JUnit.UserControllerTests.executor": "Run",
-    "JUnit.UserControllerTests.shouldReturnEmptyArray.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/44747/SE_Training/thegymgoers-java-backend"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AppApplication.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests$LoginTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests$LoginTests.shouldReturn200IfLoginSuccessful.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUserDoesNotMatch.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUsernameIsEmpty.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUsernameIsNull.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests$RegisterTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTests.createUserHttpRequest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTests.createUserWithSameUsername.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTests.creatingNullUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTests.shouldReturnEmptyArray.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/44747/SE_Training/thegymgoers-java-backend&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.AppApplication">
     <configuration name="AppApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.AppApplication" />
@@ -67,22 +87,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AuthControllerTests$LoginTests.shouldReturn400IfUsernameIsEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.thegymgoers_java.app.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.thegymgoers_java.app.AuthControllerTests" />
-      <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.AuthControllerTests$LoginTests" />
-      <option name="METHOD_NAME" value="shouldReturn400IfUsernameIsEmpty" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -99,6 +103,21 @@
       <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.AuthControllerTests$LoginTests" />
       <option name="METHOD_NAME" value="shouldReturn400IfUsernameIsNull" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthControllerTests$RegisterTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.thegymgoers_java.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.thegymgoers_java.app.AuthControllerTests" />
+      <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.AuthControllerTests$RegisterTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -137,10 +156,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.AppApplication" />
+        <item itemvalue="JUnit.AuthControllerTests$RegisterTests" />
         <item itemvalue="JUnit.UserControllerTests.shouldReturnEmptyArray" />
         <item itemvalue="JUnit.AuthControllerTests" />
         <item itemvalue="JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUsernameIsNull" />
-        <item itemvalue="JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUsernameIsEmpty" />
       </list>
     </recent_temporary>
   </component>

@@ -5,8 +5,11 @@ import jakarta.validation.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Document("users")
 public class User {
@@ -30,11 +33,21 @@ public class User {
     @JsonProperty("Workouts")
     private List<Workout> workoutsList = new ArrayList<>();
 
+    private Set<ERole> roles = new HashSet<>();
+
 
     public User(String username, String emailAddress, String password){
         this.username = username;
         this.password = password;
         this.emailAddress = emailAddress;
+    }
+
+    public String getId() {
+        return _id;
+    }
+
+    public void setId(String _id) {
+        this._id = _id;
     }
 
     public String getUsername() {
@@ -55,5 +68,13 @@ public class User {
 
     public List<Workout> getWorkoutsList(){
         return this.workoutsList;
+    }
+
+    public Set<ERole> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<ERole> roles) {
+        this.roles = roles;
     }
 }
