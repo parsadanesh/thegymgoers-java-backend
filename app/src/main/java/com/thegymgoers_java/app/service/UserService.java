@@ -67,4 +67,20 @@ public class UserService {
         return user.getWorkoutsList();
     }
 
+    public User addWorkout(String username, Workout workoutToAdd){
+        // Find the user
+        User user = null;
+
+        if(userRepository.findByUsername(username).isPresent()){
+            user = userRepository.findByUsername(username).get();
+            // Add the new workout
+            user.addWorkout(workoutToAdd);
+            // Save updates to database
+            userRepository.save(user);
+        }
+
+        return user;
+
+
+    }
 }

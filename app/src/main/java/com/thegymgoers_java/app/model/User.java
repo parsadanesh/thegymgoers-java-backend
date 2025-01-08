@@ -14,6 +14,8 @@ import java.util.Set;
 @Document("users")
 public class User {
 
+    // Fields
+
     @Id
     @JsonProperty("_id")
     private String _id;
@@ -41,6 +43,8 @@ public class User {
         this.password = password;
         this.emailAddress = emailAddress;
     }
+
+    // Getters and setters
 
     public String getId() {
         return _id;
@@ -76,5 +80,9 @@ public class User {
 
     public void setRoles(Set<ERole> roles) {
         this.roles = roles;
+    }
+
+    public void addWorkout(Workout workoutToAdd){
+        this.workoutsList.add(workoutToAdd);
     }
 }
