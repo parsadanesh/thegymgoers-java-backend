@@ -1,6 +1,7 @@
 package com.thegymgoers_java.app.controller;
 
 import com.thegymgoers_java.app.model.Workout;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.thegymgoers_java.app.model.User;
@@ -28,11 +29,13 @@ public class UserContoller {
     }
 
     @GetMapping("/users/{username}/workouts")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ResponseEntity<?> getWorkouts(@PathVariable String username){
+
         // Attempting to find list of workouts based on a user's username
         List<Workout> workoutList = userService.getWorkouts(username);
 
-        // ReturnS the valid list
+        // Returns the valid list of workouts
         if(!(workoutList == null)){
             return new ResponseEntity<>(workoutList, HttpStatus.OK);
         }

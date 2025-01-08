@@ -53,17 +53,24 @@ public class AuthController {
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
+        // Authenticate the user
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
 
+        // Set the authentication in the security context
         SecurityContextHolder.getContext().setAuthentication(authentication);
+
+
         String jwt = jwtUtils.generateJwtToken(authentication);
 
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+
+        // Get roles from user details
         List<String> roles = userDetails.getAuthorities().stream()
                 .map(item -> item.getAuthority())
                 .collect(Collectors.toList());
 
+        // Returned JWT response
         return ResponseEntity.ok(new JwtResponse(jwt,
                 userDetails.getId(),
                 userDetails.getUsername(),
@@ -73,6 +80,8 @@ public class AuthController {
 
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody NewUserRequest newUserRequest) {
+
+        // Checking if email/username is already taken
         if (userRepository.findByUsername(newUserRequest.getUsername()).isPresent()) {
             return ResponseEntity
                     .badRequest()
@@ -90,6 +99,7 @@ public class AuthController {
                 newUserRequest.getEmailAddress(),
                 encoder.encode(newUserRequest.getPassword()));
 
+        // Set the roles for the new user
         Set<String> strRoles = newUserRequest.getRole();
         Set<ERole> roles = new HashSet<>();
 
@@ -106,45 +116,8 @@ public class AuthController {
         }
 
         user.setRoles(roles);
-
         userRepository.save(user);
 
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
     }
-
-//
-//    @PostMapping("/register")
-//    public ResponseEntity<String> registerUser(@Valid @RequestBody NewUserRequest newUserRequest){
-//        try {
-//            // attempts to register the new user
-//            User registeredUser = userService.register(new User(newUserRequest.getUsername(),
-//                    newUserRequest.getEmailAddress(), newUserRequest.getPassword()));
-//            // returns null if a user already exists with the email/username used to register
-//            if(registeredUser == null){
-//                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("User with that email/username already exists");
-//            }
-//        }catch (Exception e) {
-//            // Exception thrown when the user's email/username is either empty or null
-//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Please Enter A Valid User details");
-//        }
-//        return ResponseEntity.ok("User Reg Successful");
-//    }
-//
-//    @PostMapping("/login")
-//    public ResponseEntity<?> loginUser(@Valid @RequestBody User userToLogin){
-//        try{
-//            // Attempts to login with a given user's details
-//            User user = userService.login(userToLogin);
-//
-//            // If a user is returned, the login was successful
-//            if(!(user == null)) {
-//                return new ResponseEntity<>(user, HttpStatus.OK);
-//            }
-//        }catch (Exception e){
-//            // Displays an error based on if the details are invalid
-//            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-//
-//        }
-//        return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
-//    }
 }
