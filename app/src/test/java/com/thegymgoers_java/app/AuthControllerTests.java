@@ -2,6 +2,8 @@ package com.thegymgoers_java.app;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.thegymgoers_java.app.model.User;
+import com.thegymgoers_java.app.payload.request.NewUserRequest;
+import com.thegymgoers_java.app.repository.UserRepository;
 import com.thegymgoers_java.app.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
@@ -13,12 +15,14 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.util.List;
+import java.util.Optional;
+
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -33,13 +37,24 @@ public class AuthControllerTests {
     @MockBean
     UserService userService;
 
+    @MockBean
+    UserRepository userRepository;
+
+    private Optional<User> mockuser ;
+
     private User user;
     private User user2;
+    private NewUserRequest newUserRequest = new NewUserRequest();
 
     @BeforeEach
     void setUp() {
-        user = new User("testname", "testemail@dom.com", "fakepass");
+
+        user = new User("testuser", "pass@email.com", "pass");
         user2 = new User("testname", "testemail2@dom.com", "fakepass");
+        newUserRequest.setUsername("testuser");
+        newUserRequest.setPassword("pass");
+        newUserRequest.setEmailAddress("pass@email.com");
+//        mockuser = new Optional<User>("mock", "email.com", "pass");
     }
 
     @Nested
@@ -48,33 +63,65 @@ public class AuthControllerTests {
         @Test
         void createUserHttpRequest() throws Exception {
             // Mocking a successful response from the database
-            when(userService.register(any(User.class))).thenReturn(user);
+            when(userRepository.save(user)).thenReturn(user);
 
             // Mocking a call to the api with valid registration details
             // Asserting a successful 200 response
-            mockMvc.perform(post("/register")
+            mockMvc.perform(post("/api/auth/signup")
                             .contentType(MediaType.APPLICATION_JSON)
                             .content(objectMapper.writeValueAsString(user)))
                     .andExpect(status().isOk())
-                    .andExpect(content().string("User Reg Successful"))
+                    .andExpect(jsonPath("$.message").value("User registered successfully!"))
                     .andDo(print());
         }
 
         @Test
         void createUserWithSameUsername() throws Exception {
             // Mocking a user with the same email/username response
-            when(userService.register(user2)).thenReturn(null);
+            when(userRepository.findByUsername(newUserRequest.getUsername())).thenReturn(Optional.of(user));
 
             // Mocking a call to the api with registration with the same username
             // Asserting a unsuccessful 400 response
-            mockMvc.perform(post("/register")
+            mockMvc.perform(post("/api/auth/signup")
                             .contentType(MediaType.APPLICATION_JSON)
-                            .content(objectMapper.writeValueAsString(user2)))
+                            .content(objectMapper.writeValueAsString(newUserRequest)))
                     .andExpect(status().isBadRequest())
-                    .andExpect(content().string("User with that email/username already exists"))
+                    .andExpect(jsonPath("$.message").value("Error: Username is already taken!"))
                     .andDo(print());
         }
 
+        @Test
+        void createUserWithSameEmail() throws Exception {
+            // Mocking a user with the same email/username response
+            when(userRepository.findByEmailAddress(newUserRequest.getEmailAddress())).thenReturn(Optional.of(user));
+
+            // Mocking a call to the api with registration with the same username
+            // Asserting a unsuccessful 400 response
+            mockMvc.perform(post("/api/auth/signup")
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content(objectMapper.writeValueAsString(newUserRequest)))
+                    .andExpect(status().isBadRequest())
+                    .andExpect(jsonPath("$.message").value("Error: Email is already in use!"))
+                    .andDo(print());
+        }
+
+        @Test
+        void createUserWithNullUsername() throws Exception {
+            // Mocking a user with the same email/username response
+            newUserRequest.setUsername(null);
+//            when(userRepository.findByUsername(newUserRequest.getUsername())).thenReturn(Optional.of(user));
+
+//            when(userRepository.save(user)).thenReturn(user);
+            // Mocking a call to the api with registration with the same username
+            // Asserting a unsuccessful 400 response
+            mockMvc.perform(post("/api/auth/signup")
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content(objectMapper.writeValueAsString(newUserRequest)))
+                    .andExpect(status().isBadRequest())
+                    .andExpect(status().reason("Invalid request content."))
+//                    .andExpect(jsonPath("$.message").value("Error: Username is already taken!"))
+                    .andDo(print());
+        }
 
         @Test
         void creatingNullUser() throws Exception {
@@ -82,11 +129,11 @@ public class AuthControllerTests {
             User newUser = new User("testuser", null, "fakepass");
 
             // Mocking the userService response
-            when(userService.register(newUser))
-                    .thenThrow(new IllegalArgumentException("User details cannot not be empty or null"));
+//            when(userService.register(newUser))
+//                    .thenThrow(new IllegalArgumentException("User details cannot not be empty or null"));
 
             // Asserting a unsuccessful 400 response
-            mockMvc.perform(post("/register")
+            mockMvc.perform(post("/api/auth/signup")
                             .contentType(MediaType.APPLICATION_JSON)
                             .content(objectMapper.writeValueAsString(newUser)))
                     .andExpect(status().isBadRequest())
