@@ -5,13 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30e1a45c-3b5d-468e-af24-79e816783350" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/TestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/UserContoller.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/UserContoller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/Exercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/Exercise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/Workout.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/Workout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/payload/request/AddWorkoutRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/payload/request/AddWorkoutRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/com/thegymgoers_java/app/AuthControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/thegymgoers_java/app/AuthControllerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/thegymgoers_java/app/UserControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/thegymgoers_java/app/UserControllerTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\44747\SE_Training\thegymgoers-java-backend\htmlReport" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -40,29 +55,53 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.AppApplication.executor": "Run",
+    "JUnit.AuthControllerTests$LoginTests.checkWhenPasswordDontMatch.executor": "Run",
+    "JUnit.AuthControllerTests$LoginTests.createUserWithSameEmail.executor": "Run",
     "JUnit.AuthControllerTests$LoginTests.executor": "Run",
     "JUnit.AuthControllerTests$LoginTests.shouldReturn200IfLoginSuccessful.executor": "Run",
+    "JUnit.AuthControllerTests$LoginTests.shouldReturn200IfUsernamePasswordMatch.executor": "Run",
+    "JUnit.AuthControllerTests$LoginTests.shouldReturn400IfEmailAddressDoesNotMatch.executor": "Run",
     "JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUserDoesNotMatch.executor": "Run",
+    "JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUsernameDoesNotMatch.executor": "Run",
     "JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUsernameIsEmpty.executor": "Run",
     "JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUsernameIsNull.executor": "Run",
+    "JUnit.AuthControllerTests$LoginTests.shouldReturn401IfUsernameDoesNotMatc.executor": "Run",
+    "JUnit.AuthControllerTests$LoginTests.shouldReturn401IfUsernameDoesNotMatch.executor": "Run",
     "JUnit.AuthControllerTests$RegisterTests.createUserHttpRequest.executor": "Run",
+    "JUnit.AuthControllerTests$RegisterTests.createUserWithNullUsername.executor": "Run",
     "JUnit.AuthControllerTests$RegisterTests.createUserWithSameEmail.executor": "Run",
     "JUnit.AuthControllerTests$RegisterTests.createUserWithSameUsername.executor": "Run",
+    "JUnit.AuthControllerTests$RegisterTests.creatingNullUser.executor": "Run",
     "JUnit.AuthControllerTests$RegisterTests.executor": "Run",
-    "JUnit.AuthControllerTests.executor": "Run",
+    "JUnit.AuthControllerTests.executor": "Coverage",
     "JUnit.UserControllerTests.createUserHttpRequest.executor": "Run",
     "JUnit.UserControllerTests.createUserWithSameUsername.executor": "Run",
     "JUnit.UserControllerTests.creatingNullUser.executor": "Run",
     "JUnit.UserControllerTests.executor": "Run",
+    "JUnit.UserControllerTests.shouldReturn200WhenAddingAWorkout.executor": "Run",
     "JUnit.UserControllerTests.shouldReturnEmptyArray.executor": "Run",
+    "Maven.app [test].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/44747/SE_Training/thegymgoers-java-backend"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.AuthControllerTests$RegisterTests.creatingNullUser">
-    <configuration name="AuthControllerTests$RegisterTests.createUserHttpRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.UserControllerTests.shouldReturn200WhenAddingAWorkout">
+    <configuration name="AppApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.AppApplication" />
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.thegymgoers_java.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthControllerTests$RegisterTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
         <pattern>
@@ -72,13 +111,43 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.thegymgoers_java.app.AuthControllerTests" />
       <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.AuthControllerTests$RegisterTests" />
-      <option name="METHOD_NAME" value="createUserHttpRequest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthControllerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.thegymgoers_java.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.thegymgoers_java.app" />
+      <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.AuthControllerTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTests.shouldReturn200WhenAddingAWorkout" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.thegymgoers_java.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.thegymgoers_java.app" />
+      <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.UserControllerTests" />
+      <option name="METHOD_NAME" value="shouldReturn200WhenAddingAWorkout" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AuthControllerTests$RegisterTests.createUserWithNullUsername" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserControllerTests.shouldReturnEmptyArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
         <pattern>
@@ -86,57 +155,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.thegymgoers_java.app.AuthControllerTests" />
-      <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.AuthControllerTests$RegisterTests" />
-      <option name="METHOD_NAME" value="createUserWithNullUsername" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AuthControllerTests$RegisterTests.createUserWithSameEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.thegymgoers_java.app.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.thegymgoers_java.app.AuthControllerTests" />
-      <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.AuthControllerTests$RegisterTests" />
-      <option name="METHOD_NAME" value="createUserWithSameEmail" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AuthControllerTests$RegisterTests.createUserWithSameUsername" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.thegymgoers_java.app.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.thegymgoers_java.app.AuthControllerTests" />
-      <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.AuthControllerTests$RegisterTests" />
-      <option name="METHOD_NAME" value="createUserWithSameUsername" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AuthControllerTests$RegisterTests.creatingNullUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.thegymgoers_java.app.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.thegymgoers_java.app.AuthControllerTests" />
-      <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.AuthControllerTests$RegisterTests" />
-      <option name="METHOD_NAME" value="creatingNullUser" />
+      <option name="PACKAGE_NAME" value="com.thegymgoers_java.app" />
+      <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.UserControllerTests" />
+      <option name="METHOD_NAME" value="shouldReturnEmptyArray" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -144,11 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AuthControllerTests$RegisterTests.creatingNullUser" />
-        <item itemvalue="JUnit.AuthControllerTests$RegisterTests.createUserWithNullUsername" />
-        <item itemvalue="JUnit.AuthControllerTests$RegisterTests.createUserWithSameEmail" />
-        <item itemvalue="JUnit.AuthControllerTests$RegisterTests.createUserWithSameUsername" />
-        <item itemvalue="JUnit.AuthControllerTests$RegisterTests.createUserHttpRequest" />
+        <item itemvalue="JUnit.UserControllerTests.shouldReturn200WhenAddingAWorkout" />
+        <item itemvalue="Application.AppApplication" />
+        <item itemvalue="JUnit.UserControllerTests.shouldReturnEmptyArray" />
+        <item itemvalue="JUnit.AuthControllerTests" />
+        <item itemvalue="JUnit.AuthControllerTests$RegisterTests" />
       </list>
     </recent_temporary>
   </component>
@@ -168,10 +189,15 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/test/java/com/thegymgoers_java/app/UserControllerTests.java</url>
-          <line>90</line>
+          <line>112</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/thegymgoers_java_backend$AuthControllerTests.ic" NAME="AuthControllerTests Coverage Results" MODIFIED="1736427265013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.thegymgoers_java.app.*</FILTER>
+    </SUITE>
   </component>
 </project>

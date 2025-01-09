@@ -1,22 +1,23 @@
 package com.thegymgoers_java.app.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 public class Exercise {
 
 
-    @Field("exercise")
-    private String exercise;
+    @JsonProperty("exerciseName")
+    private String exerciseName;
 
-    @Field("sets")
+    @JsonProperty("sets")
     private int sets;
 
-    @Field("reps")
+    @JsonProperty("reps")
     private int reps;
 
-    @Field("weight")
+    @JsonProperty("weight")
     private int weight;
 
-    @Field("time")
+    @JsonProperty("time")
     private int time;
 }

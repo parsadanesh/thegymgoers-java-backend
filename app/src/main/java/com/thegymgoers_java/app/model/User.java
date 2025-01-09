@@ -32,7 +32,7 @@ public class User {
 //    @NotEmpty(message = "Account needs an password")
     private String password;
 
-    @JsonProperty("Workouts")
+    @JsonProperty("workoutsList")
     private List<Workout> workoutsList = new ArrayList<>();
 
     private Set<ERole> roles = new HashSet<>();

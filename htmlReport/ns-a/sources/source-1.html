@@ -1,0 +1,91 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > UserRepository</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.thegymgoers_java.app.repository</a>
+</div>
+
+<h1>Coverage Summary for Class: UserRepository (com.thegymgoers_java.app.repository)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+</tr>
+  <tr>
+    <td class="name">UserRepository$MockitoMock$856159546</td>
+  </tr>
+  <tr>
+    <td class="name">UserRepository$MockitoMock$856159546$auxiliary$LUUHvbvz</td>
+  </tr>
+  <tr>
+    <td class="name">UserRepository$MockitoMock$856159546$auxiliary$yoJblJ4q</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.thegymgoers_java.app.repository;
+&nbsp;
+&nbsp;import com.thegymgoers_java.app.model.User;
+&nbsp;import org.springframework.data.mongodb.repository.MongoRepository;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;import java.util.Optional;
+&nbsp;
+&nbsp;public interface UserRepository extends MongoRepository&lt;User, String&gt; {
+&nbsp;
+&nbsp;    Optional&lt;User&gt; findByUsername(String username);
+&nbsp;
+&nbsp;    Optional&lt;User&gt; findByEmailAddress(String emailAddress);
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-01-09 13:01</div>
+</div>
+</body>
+</html>

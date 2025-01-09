@@ -45,9 +45,8 @@ public class UserContoller {
     }
 
     @PostMapping("/users/{username}/workouts")
-    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<?> addWorkout(@PathVariable String username, Workout workoutToAdd){
-
+//    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    public ResponseEntity<?> addWorkout(@PathVariable String username, @RequestBody Workout workoutToAdd){
 
         // Attempting to find list of workouts based on a user's username
         User updatedUser = userService.addWorkout(username, workoutToAdd);

@@ -14,9 +14,8 @@ public class Workout {
     @Field("exercises")
     private List<Exercise> exercises;
 
-    @CreatedDate
     @Field("date_created")
-    private Date dateCreated;
+    private String dateCreated;
 
     // Getters and setters
 
@@ -28,11 +27,15 @@ public class Workout {
         this.exercises = exercises;
     }
 
-    public Date getDataCreated() {
+    public String getDataCreated() {
         return dateCreated;
     }
 
-    public void setDataCreated(Date dateCreated) {
+    public void setDataCreated(String  dateCreated) {
         this.dateCreated = dateCreated;
+    }
+
+    public String getDateCreated() {
+        return dateCreated;
     }
 }
