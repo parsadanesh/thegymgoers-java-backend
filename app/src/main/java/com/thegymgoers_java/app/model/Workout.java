@@ -4,6 +4,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.xml.crypto.Data;
+import java.util.Date;
 import java.util.List;
 
 public class Workout {
@@ -15,7 +16,7 @@ public class Workout {
 
     @CreatedDate
     @Field("date_created")
-    private Data dataCreated;
+    private Date dateCreated;
 
     // Getters and setters
 
@@ -27,11 +28,11 @@ public class Workout {
         this.exercises = exercises;
     }
 
-    public Data getDataCreated() {
-        return dataCreated;
+    public Date getDataCreated() {
+        return dateCreated;
     }
 
-    public void setDataCreated(Data dataCreated) {
-        this.dataCreated = dataCreated;
+    public void setDataCreated(Date dateCreated) {
+        this.dateCreated = dateCreated;
     }
 }
