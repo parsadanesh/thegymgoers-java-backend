@@ -5,54 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30e1a45c-3b5d-468e-af24-79e816783350" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/mongoSettings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/thegymgoers-java-backend.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/AppApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/CustomSecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/configuration/CustomSecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/configuration/WebSecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/configuration/jwt/AuthEntryPointJwt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/configuration/jwt/AuthTokenFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/configuration/jwt/JwtUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/configuration/services/UserDetailsImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/configuration/services/UserDetailsServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/AuthController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/GymGroupController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/UserContoller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/ERole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/Exercise.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/GymGroup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/Workout.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/payload/request/AddWorkoutRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/payload/request/LoginRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/payload/request/NewUserRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/payload/response/JwtResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/payload/response/MessageResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/repository/GymGroupRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/service/GymGroupService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/thegymgoers_java/app/AppApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/thegymgoers_java/app/AuthControllerTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/thegymgoers_java/app/UserControllerTests.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/payload/request/NewGymGroupRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/thegymgoers_java/app/GymGroupControllerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/UserContoller.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/UserContoller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/Exercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/Exercise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/GymGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/GymGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/Workout.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/Workout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/thegymgoers_java/app/UserControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/thegymgoers_java/app/UserControllerTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
