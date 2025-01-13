@@ -54,6 +54,8 @@ public class AuthController {
 
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
+
+        System.out.println(loginRequest);
         try {
             // Authenticate the user
             Authentication authentication = authenticationManager.authenticate(
@@ -89,6 +91,8 @@ public class AuthController {
 
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody NewUserRequest newUserRequest) {
+
+//        System.out.println(newUserRequest);
 
         // Checking if email/username is already taken
         if (userRepository.findByUsername(newUserRequest.getUsername()).isPresent()) {
