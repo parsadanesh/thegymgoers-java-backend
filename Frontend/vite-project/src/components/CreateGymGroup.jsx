@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react";
 
 const CreateGymGroup = (props) => {
 
+    const token = localStorage.getItem('token');
+
     const groupName = useRef();
 
     const [tempGroup, setTempGroup] = useState({ name: "", admin: "" });
@@ -10,10 +12,11 @@ const CreateGymGroup = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setTempGroup({
-            name: groupName.current.value,
-            admin: props.user.email
-        })
+        createGroup();
+        // setTempGroup({
+        //     name: groupName.current.value,
+        //     admin: props.user.email
+        // })
         
         
     };
@@ -25,10 +28,22 @@ const CreateGymGroup = (props) => {
     }, [tempGroup])
 
     const createGroup = async (e) => {
-        const email = props.user.email
+        console.log(token);
         try {
-            const res = await axios.post("http://localhost:3000/createGroup", { params: { user: email, newGroup: tempGroup } })
-            if (res.status === 201) {
+            const res = await axios.post(`http://localhost:4000/gymgroups/${props.user.username}`, 
+                {
+                    username: props.user.username,
+                    groupName: groupName.current.value
+            
+                },
+                {
+                    headers: {
+                        Authorization: token
+                    }
+                }
+                
+            )
+            if (res.status === 200) {
                 setSetupMessage("GymGroup Successfully Created");
                 setTimeout(() => setSetupMessage(""), 3000);
                 groupName.current.value = "";

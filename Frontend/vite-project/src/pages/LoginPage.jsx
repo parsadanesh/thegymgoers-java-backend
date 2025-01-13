@@ -3,26 +3,26 @@ import UserDetailsForm from "../components/UserDetailsForm";
 
 const LoginPage = (props) => {
 
-    const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     useEffect(() => {
-        if (email !== "" || password !== "") {
+        if (username !== "" || password !== "") {
             props.setUser({
-                email: email,
+                username: username,
                 password: password
             })
-            setEmail("");
+            setUsername("");
             setPassword("");
         }
-    }, [email, password])
+    }, [username, password])
 
 
     return (
         <div className="container">
             <h1>Login</h1>
             <br/>
-            <UserDetailsForm setEmail={setEmail} setPassword={setPassword} />
+            <UserDetailsForm setUsername={setUsername} setPassword={setPassword} />
             {props.registrationMessage && <div className="alert alert-success" role="alert">{props.registrationMessage}</div>}
         </div>
     )

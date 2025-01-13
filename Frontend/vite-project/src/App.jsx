@@ -17,21 +17,21 @@ import JoinGymGroup from './components/JoinGymGroup';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [newUser, setNewUser] = useState({ email: "", password: "", });
-  const [user, setUser] = useState({ email: "", password: "", });
+  const [newUser, setNewUser] = useState({ username: "", email: "", password: "", });
+  const [user, setUser] = useState({ username: "", password: "", });
   const [registrationMessage, setRegistrationMessage] = useState('');
 
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (user.email !== "" || user.password !== "") {
+    if (user.username !== "" || user.password !== "") {
       console.log("user changed", user);
       sendLogin();
     }
   }, [user]);
 
   useEffect(() => {
-    if (newUser.email !== "" || newUser.password !== "") {
+    if (newUser.username !== "" || newUser.email !== "" || newUser.password !== "") {
       registerUser();
     }
   }, [newUser]);
@@ -45,7 +45,16 @@ function App() {
 
   const registerUser = async (e) => {
     try {
-      const res = await axios.post(`${import.meta.env.VITE_APP_GYMBACKEND}/addUser`, newUser);
+      console.log("user: " + newUser.password);
+
+      const res = await axios.post(`http://localhost:4000/api/auth/signup`, 
+      {
+        username: newUser.username,
+        emailAddress: newUser.email,
+        password: newUser.password,
+        role: ["user"] || []
+      });
+      
       if (res.status === 201) {
         setRegistrationMessage('User successfully registered!');
         setTimeout(() => {
@@ -54,7 +63,7 @@ function App() {
       }, 1000);
       }
     } catch (e) {
-      console.log(e.response.data);
+      // console.log(e.response.data);
       setRegistrationMessage('Registration failed. Please try again.');
       setTimeout(() => {
         setRegistrationMessage('');
@@ -65,10 +74,24 @@ function App() {
 
   const sendLogin = async (e) => {
       try {
-        const res = await axios.post(`${import.meta.env.VITE_APP_GYMBACKEND}/login`, user);
+        const res = await axios.post(`http://localhost:4000/api/auth/signin`, 
+          {
+            username: user.username,
+            password: user.password
+          }
+        );
+
+        console.log(res.data);
+        
+        
         if (res.status === 200) {
-          setLoggedIn(true)
-          navigate("/log")
+          const { accessToken, tokenType } = res.data;
+          const token = `${tokenType} ${accessToken}`;
+          localStorage.setItem('token', token);
+          
+          
+          setLoggedIn(true);
+          navigate("/log");
         };
       } catch (e) {
         console.log(e.response.data.message);

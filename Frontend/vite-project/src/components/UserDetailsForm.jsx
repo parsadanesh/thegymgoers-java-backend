@@ -1,12 +1,12 @@
 import { useRef } from "react";
 
 const UserDetailsForm = (props) => {
-    const email = useRef();
+    const username = useRef();
     const pass = useRef();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        props.setEmail(email.current.value);
+        props.setUsername(username.current.value);
         props.setPassword(pass.current.value);
     }
 
@@ -14,14 +14,14 @@ const UserDetailsForm = (props) => {
     return (
         <form onSubmit={handleSubmit}>
         <div style={{ marginBottom: '20px' }}>
-            <label htmlFor="email" style={{ marginRight: '10px' }}>Email: </label>
+            <label htmlFor="username" style={{ marginRight: '10px' }}>Email: </label>
             <input
-              data-testid="email"
-              type="email"
-              name="email"
-              id="email"
-              placeholder="you@domain.com"
-              ref={email}
+              data-testid="username"
+              type="username"
+              name="username"
+              id="username"
+              placeholder="username"
+              ref={username}
               required
             />
           </div>

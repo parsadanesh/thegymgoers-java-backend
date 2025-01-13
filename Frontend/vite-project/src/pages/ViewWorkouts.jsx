@@ -8,6 +8,8 @@ const ViewWorkout = (props) => {
     const [display, setDisplay] = useState([]);
     const [consecutiveDays, setConsecutiveDays] = useState(0);
 
+    const token = localStorage.getItem('token');
+
     const handleDelete = async (exerciseID) => {
         try {     
             await axios.delete(`http://localhost:3000/deleteExercise`, { params: { email: props.user.email, exercise_id: exerciseID } });
@@ -24,7 +26,13 @@ const ViewWorkout = (props) => {
 
     const getWorkouts = async (e) => {
         try {
-            const res = await axios.get("http://localhost:3000/viewWorkouts", { params: props.user });     
+            const res = await axios.get(`${import.meta.env.VITE_APP_GYMBACKEND}/users/${props.user.username}/workouts`, {
+            headers: {
+                Authorization: token
+            }
+            });
+            console.log(res.data);
+            
             setWorkouts(res.data);
         } catch (e) {
             console.log(e.response?.data?.message);
