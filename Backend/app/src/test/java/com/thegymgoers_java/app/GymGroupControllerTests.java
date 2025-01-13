@@ -10,6 +10,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -41,9 +42,10 @@ public class GymGroupControllerTests {
     }
 
     @Test
+    @WithMockUser(username = "testname", roles = {"USER"})
     void shouldReturn200CreatingNewGroup() throws Exception{
 
-        mockMvc.perform(post("/users/{username}/workouts", user.getUsername())
+        mockMvc.perform(post("/gymgroups/{username}", user.getUsername())
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(user)))
                 .andExpect(status().isOk())

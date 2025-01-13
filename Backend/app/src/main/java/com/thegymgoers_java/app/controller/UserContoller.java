@@ -19,8 +19,6 @@ import java.util.List;
 @Validated
 public class UserContoller {
 
-    private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-
     private final UserService userService;
 
     @Autowired
