@@ -29,11 +29,6 @@ public class GymGroupController {
     @PostMapping("/gymgroups/{username}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ResponseEntity<?> createGymGroup(@PathVariable String username, @Valid @RequestBody NewGymGroupRequest newGymGroupRequest){
-
-//        GymGroup gymGroupToAdd = new GymGroup();
-//        gymGroupToAdd.setGroupName(newGymGroupRequest.getGroupName());
-//        gymGroupToAdd.addAdmins();
-
         try {
             GymGroup gymGroup = gymGroupService.createGymGroup(username, newGymGroupRequest);
 

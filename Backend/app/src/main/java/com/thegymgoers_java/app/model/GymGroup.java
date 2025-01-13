@@ -62,5 +62,13 @@ public class GymGroup {
         this.members.add(membersId);
     }
 
-
+    @Override
+    public String toString() {
+        return "GymGroup{" +
+                "_id='" + _id + '\'' +
+                ", groupName='" + groupName + '\'' +
+                ", admins=" + admins +
+                ", members=" + members +
+                '}';
+    }
 }

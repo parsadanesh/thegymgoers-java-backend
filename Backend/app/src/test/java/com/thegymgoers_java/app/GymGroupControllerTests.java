@@ -1,10 +1,14 @@
 package com.thegymgoers_java.app;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.thegymgoers_java.app.model.GymGroup;
 import com.thegymgoers_java.app.model.User;
+import com.thegymgoers_java.app.payload.request.NewGymGroupRequest;
 import com.thegymgoers_java.app.service.GymGroupService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,7 +16,10 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
 
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -22,6 +29,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 public class GymGroupControllerTests {
+
+    private static final Logger logger = LoggerFactory.getLogger(GymGroupControllerTests.class);
+
 
     @Autowired
     MockMvc mockMvc;
@@ -44,12 +54,25 @@ public class GymGroupControllerTests {
     @Test
     @WithMockUser(username = "testname", roles = {"USER"})
     void shouldReturn200CreatingNewGroup() throws Exception{
+        NewGymGroupRequest newGymGroupRequest = new NewGymGroupRequest();
+        newGymGroupRequest.setGroupName("testGroupUpdatedtesty");
+        newGymGroupRequest.setUsername("testname");
+
+        GymGroup mockGymGroup = new GymGroup();
+        mockGymGroup.set_id("67855bf37ecbd73ac508de53");
+        mockGymGroup.setGroupName("testGroupUpdatedtety");
+        mockGymGroup.addAdmins("677fc378a4b1fc5b9fd40411");
+        mockGymGroup.addMembers("677fc378a4b1fc5b9fd40411");
+
+        when(gymGroupService.createGymGroup(anyString(), any(NewGymGroupRequest.class))).thenReturn(mockGymGroup);
+
+        System.out.println("mockGymGroup: " + newGymGroupRequest.toString());
 
         mockMvc.perform(post("/gymgroups/{username}", user.getUsername())
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(user)))
+                        .content(objectMapper.writeValueAsString(newGymGroupRequest)))
                 .andExpect(status().isOk())
-                .andExpect(content().json("[]"))
+                .andExpect(content().json(objectMapper.writeValueAsString(mockGymGroup)))
                 .andDo(print());
 
     }

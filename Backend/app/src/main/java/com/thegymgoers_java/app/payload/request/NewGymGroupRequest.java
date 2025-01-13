@@ -25,4 +25,12 @@ public class NewGymGroupRequest {
     public void setGroupName(@NotEmpty String groupName) {
         this.groupName = groupName;
     }
+
+    @Override
+    public String toString() {
+        return "NewGymGroupRequest{" +
+                "username='" + username + '\'' +
+                ", groupName='" + groupName + '\'' +
+                '}';
+    }
 }
