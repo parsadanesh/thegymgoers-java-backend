@@ -5,6 +5,7 @@ import axios from "axios";
 
 const WorkoutForm = (props) => {
     // create some hooks for a workout object
+    const token = localStorage.getItem('token');
 
     const [selectedExercise, setSelectedExercise] = useState(null);
     const [selectedOptionText, setSelectedOptionText] = useState("");
@@ -17,8 +18,19 @@ const WorkoutForm = (props) => {
     
     const logWorkout = async (e) => {
         try {
-            const res = await axios.post(`${import.meta.env.VITE_APP_GYMBACKEND}/logWorkout`, { existingUser: props.user, workoutDetails: workout });
-            if (res.status === 201) console.log("success");
+
+            const res = await axios.post(`http://localhost:4000/users/${props.user.username}/workouts`, 
+                {
+                    exercises: exercises,
+                    dateCreated: ""
+                },
+                {
+                    headers: {
+                        Authorization: token
+                    }
+                }
+            );
+            if (res.status === 200) console.log("success");
         } catch (e) {
                 if (e.response && e.response.data) {
                     console.log(e.response.data.message);

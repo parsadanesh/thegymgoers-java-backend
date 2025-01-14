@@ -6,7 +6,8 @@ const WeightTraining = (props) => {
     const [repRef, setRepRef] = useState("");
     const [weightRef, setWeightRef] = useState("");
 
-
+    
+    
     // Handlers for input changes
     const handleSetsChange = (e) => setSetRef(e.target.value);
     const handleRepsChange = (e) => setRepRef(e.target.value);
@@ -16,7 +17,7 @@ const WeightTraining = (props) => {
         e.preventDefault();
         if (props.selectedOptionText && repRef && setRef && weightRef) {
             props.setWeightTraining({
-                name: props.selectedOptionText,
+                exerciseName: props.selectedOptionText,
                 reps: repRef,
                 sets: setRef,
                 weight: weightRef

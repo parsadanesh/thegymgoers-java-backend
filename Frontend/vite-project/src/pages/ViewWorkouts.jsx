@@ -31,7 +31,7 @@ const ViewWorkout = (props) => {
                 Authorization: token
             }
             });
-            console.log(res.data);
+            
             
             setWorkouts(res.data);
         } catch (e) {
@@ -72,10 +72,12 @@ const ViewWorkout = (props) => {
             <div className="d-flex flex-column align-items-center" key={date} style={{ border: '1px solid #ccc', margin: '10px', padding: '10px' }}>
                 <h2>{date}</h2>
                 {groupedByDate[date].map(workout => workout.exercises.map(exercise => {
+                    // console.log(workout._id);
+                    
                     if (exercise.name !== "Cardio") {
-                        return <ViewWeightTraining key={exercise._id} name={exercise.name} reps={exercise.reps} sets={exercise.sets} weight={exercise.weight} onDelete={() => handleDelete(exercise._id)} />;
+                        return <ViewWeightTraining key={workout._id + Math.random()} name={exercise.name} reps={exercise.reps} sets={exercise.sets} weight={exercise.weight} onDelete={() => handleDelete(exercise._id)} />;
                     } else {
-                        return <ViewCardioTraining key={exercise._id} name={exercise.name} duration={exercise.duration} onDelete={() => handleDelete(exercise._id)}/>;
+                        return <ViewCardioTraining key={workout._id + Math.random()} name={exercise.name} duration={exercise.duration} onDelete={() => handleDelete(exercise._id)}/>;
                     }
                 }))}
             </div>
