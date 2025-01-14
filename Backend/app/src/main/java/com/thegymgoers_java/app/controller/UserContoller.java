@@ -61,9 +61,6 @@ public class UserContoller {
     @DeleteMapping("/users/{username}/workouts/{_id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ResponseEntity<?> deleteWorkout(@PathVariable String username, @PathVariable String _id){
-
-        System.out.println(username);
-        System.out.println(_id);
         User updatedUser = userService.deleteWorkout(username, _id);
 
         // Returns the valid list of workouts
