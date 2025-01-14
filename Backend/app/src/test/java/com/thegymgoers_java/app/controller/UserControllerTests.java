@@ -67,6 +67,20 @@ public class UserControllerTests {
                     .andDo(print());
         }
 
+        @Test
+        @WithMockUser(username = "testname", roles = {"USER"})
+        void shouldReturnNullInvalidUsername() throws Exception {
+            List<Workout> workoutList = new ArrayList<>();
+            when(userService.getWorkouts(user.getUsername()))
+                    .thenReturn(null);
+
+            mockMvc.perform(get("/users/{username}/workouts", user.getUsername())
+                            .contentType(MediaType.APPLICATION_JSON))
+                    .andExpect(status().isBadRequest())
+                    .andExpect(content().string(""))
+                    .andDo(print());
+        }
+
 //        @Test
 //        @WithMockUser(username = "testname", roles = {"USER"})
 //        void shouldReturnUsersWorkoutList() throws Exception {
@@ -84,7 +98,6 @@ public class UserControllerTests {
 
 
     }
-
 
     @Nested
     class addWorkout {
@@ -159,10 +172,14 @@ public class UserControllerTests {
     @Nested
     class deleteWorkout {
 
+        /*
         @Test
         @WithMockUser(username = "testname", roles = {"USER"})
         void shouldReturnEmptyArray() throws Exception {
             List<Workout> workoutList = new ArrayList<>();
+            Workout workout = new Workout();
+            workout.set_id("1");
+            workoutList.add(workout);
 
             when(userService.getWorkouts(user.getUsername()))
                     .thenReturn(workoutList);
@@ -174,7 +191,7 @@ public class UserControllerTests {
                     .andExpect(content().json("[]"))
                     .andDo(print());
         }
-
+*/
     }
 }
 

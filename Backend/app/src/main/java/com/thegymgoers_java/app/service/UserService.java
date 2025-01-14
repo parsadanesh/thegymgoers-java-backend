@@ -62,6 +62,12 @@ public class UserService {
     }
 
     public List<Workout> getWorkouts(String username){
+
+        // Throws an exception if the username is null or empty
+        if(username == null || username.trim().isEmpty()){
+            throw new IllegalArgumentException("User details cannot not be empty or null");
+        }
+
         User user = userRepository.findByUsername(username).get();
 //        System.out.println(user);
 
@@ -84,6 +90,11 @@ public class UserService {
 //    }
 
     public User addWorkout(String username, Workout workoutToAdd) {
+
+        if(username == null || username.trim().isEmpty()){
+            throw new IllegalArgumentException("User details cannot not be empty or null");
+        }
+
         User user = userRepository.findByUsername(username).orElseThrow(() -> new IllegalArgumentException("User not found"));
         workoutToAdd.setDataCreated(LocalDateTime.now().toString());
         user.addWorkout(workoutToAdd);
@@ -91,7 +102,12 @@ public class UserService {
     }
 
     public User deleteWorkout(String username, String _id){
-        User user = null;
+        User user;
+
+        if(username == null || username.trim().isEmpty()){
+            throw new IllegalArgumentException("User details cannot not be empty or null");
+        }
+
 
         if(userRepository.findByUsername(username).isPresent()){
             user = userRepository.findByUsername(username).get();
@@ -103,7 +119,7 @@ public class UserService {
                     return userRepository.save(user);
                 }
             }
-            System.out.println("no workout found");
+            throw new IllegalArgumentException("Workout not found");
         }
         return null;
     }

@@ -74,6 +74,10 @@ public class User {
         return this.workoutsList;
     }
 
+    public void setWorkoutsList(List<Workout> workoutsList){
+        this.workoutsList = workoutsList;
+    }
+
     public Set<ERole> getRoles() {
         return roles;
     }

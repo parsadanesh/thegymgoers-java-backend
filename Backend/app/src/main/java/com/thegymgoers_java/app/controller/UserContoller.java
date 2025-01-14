@@ -34,7 +34,7 @@ public class UserContoller {
         List<Workout> workoutList = userService.getWorkouts(username);
 
         // Returns the valid list of workouts
-        if(!(workoutList == null)){
+        if(workoutList != null){
             return new ResponseEntity<>(workoutList, HttpStatus.OK);
         }
 
@@ -43,7 +43,7 @@ public class UserContoller {
     }
 
     @PostMapping("/users/{username}/workouts")
-//    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ResponseEntity<?> addWorkout(@PathVariable String username, @Valid @RequestBody Workout workoutToAdd){
 
         // Attempting to find list of workouts based on a user's username
