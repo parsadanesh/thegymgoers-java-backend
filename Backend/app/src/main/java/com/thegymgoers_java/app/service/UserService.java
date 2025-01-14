@@ -13,22 +13,26 @@ import java.util.List;
 
 @Service
 public class UserService {
-
+    // Password encoder for hashing passwords
     private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     @Autowired
     private UserRepository userRepository;
 
-    public User register(User user){
-
+    /**
+     * Registers a new user.
+     * @param user The user to register.
+     * @return The registered user or null if the user already exists.
+     */
+    public User register(User user) {
         // Throws an exception if the user's email/username used to register is null or empty
-        if(user.getUsername() == null || user.getUsername().trim().isEmpty() ||
-                user.getEmailAddress() == null || user.getEmailAddress().trim().isEmpty()){
+        if (user.getUsername() == null || user.getUsername().trim().isEmpty() ||
+                user.getEmailAddress() == null || user.getEmailAddress().trim().isEmpty()) {
             throw new IllegalArgumentException("User details cannot not be empty or null");
         }
 
         // Returns null if a user already exists with the same email/username
-        if(!userRepository.findByUsername(user.getUsername()).isEmpty() || !userRepository.findByEmailAddress(user.getEmailAddress()).isEmpty()){
+        if (!userRepository.findByUsername(user.getUsername()).isEmpty() || !userRepository.findByEmailAddress(user.getEmailAddress()).isEmpty()) {
             return null;
         }
 
@@ -38,60 +42,57 @@ public class UserService {
         return addedUser;
     }
 
-    public User login(User userLogin){
-
+    /**
+     * Logs in a user.
+     * @param userLogin The user login details.
+     * @return The logged-in user.
+     */
+    public User login(User userLogin) {
         // Throws an exception if the user's email/username used to register is null or empty
-        if(userLogin.getUsername() == null || userLogin.getUsername().trim().isEmpty() ||
-                userLogin.getEmailAddress() == null || userLogin.getEmailAddress().trim().isEmpty()){
+        if (userLogin.getUsername() == null || userLogin.getUsername().trim().isEmpty() ||
+                userLogin.getEmailAddress() == null || userLogin.getEmailAddress().trim().isEmpty()) {
             throw new IllegalArgumentException("User details cannot not be empty or null");
         }
 
         // Checks if a user exists with the same username
-        if(!userRepository.findByUsername(userLogin.getUsername()).isEmpty()){
+        if (!userRepository.findByUsername(userLogin.getUsername()).isEmpty()) {
             User user = userRepository.findByUsername(userLogin.getUsername()).get();
 
-            // method checks if the raw password matches the stored encoded password
-            if (!(passwordEncoder.matches(userLogin.getPassword(), user.getPassword()))){
+            // Checks if the raw password matches the stored encoded password
+            if (!(passwordEncoder.matches(userLogin.getPassword(), user.getPassword()))) {
                 throw new IllegalArgumentException("Incorrect password: " + userLogin.getPassword());
             }
 
             return user;
-        }else {
+        } else {
             throw new IllegalArgumentException("Incorrect Username: " + userLogin.getUsername());
         }
     }
 
-    public List<Workout> getWorkouts(String username){
-
+    /**
+     * Retrieves the list of workouts for a user.
+     * @param username The username of the user.
+     * @return The list of workouts.
+     */
+    public List<Workout> getWorkouts(String username) {
         // Throws an exception if the username is null or empty
-        if(username == null || username.trim().isEmpty()){
+        if (username == null || username.trim().isEmpty()) {
             throw new IllegalArgumentException("User details cannot not be empty or null");
         }
 
         User user = userRepository.findByUsername(username).get();
-//        System.out.println(user);
-
         return user.getWorkoutsList();
     }
 
-//    public User addWorkout(String username, Workout workoutToAdd){
-//        // Find the user
-//        User user = null;
-//        workoutToAdd.setDataCreated(LocalDateTime.now().toString());
-//
-//        if(userRepository.findByUsername(username).isPresent()){
-//            user = userRepository.findByUsername(username).get();
-//            // Add the new workout
-//            user.addWorkout(workoutToAdd);
-//            // Save updates to database
-//            userRepository.save(user);
-//        }
-//        return user;
-//    }
-
+    /**
+     * Adds a workout to a user's workout list.
+     * @param username The username of the user.
+     * @param workoutToAdd The workout to add.
+     * @return The updated user.
+     */
     public User addWorkout(String username, Workout workoutToAdd) {
-
-        if(username == null || username.trim().isEmpty()){
+        // Throws an exception if the username is null or empty
+        if (username == null || username.trim().isEmpty()) {
             throw new IllegalArgumentException("User details cannot not be empty or null");
         }
 
@@ -101,19 +102,23 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public User deleteWorkout(String username, String _id){
-        User user;
-
-        if(username == null || username.trim().isEmpty()){
+    /**
+     * Deletes a workout from a user's workout list.
+     * @param username The username of the user.
+     * @param _id The ID of the workout to delete.
+     * @return The updated user or null if the user is not found.
+     */
+    public User deleteWorkout(String username, String _id) {
+        // Throws an exception if the username is null or empty
+        if (username == null || username.trim().isEmpty()) {
             throw new IllegalArgumentException("User details cannot not be empty or null");
         }
 
+        if (userRepository.findByUsername(username).isPresent()) {
+            User user = userRepository.findByUsername(username).get();
 
-        if(userRepository.findByUsername(username).isPresent()){
-            user = userRepository.findByUsername(username).get();
-
-            for(Workout w: user.getWorkoutsList()){
-                if(w.get_id().equals(_id)){
+            for (Workout w : user.getWorkoutsList()) {
+                if (w.get_id().equals(_id)) {
                     user.getWorkoutsList().remove(w);
                     System.out.println("workout removed");
                     return userRepository.save(user);

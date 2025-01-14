@@ -9,7 +9,6 @@ public class Exercise {
 
 
     @JsonProperty("exerciseName")
-
     @NotEmpty(message = "Exercise needs a name")
     private String exerciseName;
 
