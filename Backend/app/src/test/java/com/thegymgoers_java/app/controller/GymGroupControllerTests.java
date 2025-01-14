@@ -1,4 +1,4 @@
-package com.thegymgoers_java.app;
+package com.thegymgoers_java.app.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.thegymgoers_java.app.model.GymGroup;

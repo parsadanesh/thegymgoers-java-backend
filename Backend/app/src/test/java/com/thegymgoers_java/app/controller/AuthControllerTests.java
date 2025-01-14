@@ -1,9 +1,8 @@
-package com.thegymgoers_java.app;
+package com.thegymgoers_java.app.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.thegymgoers_java.app.configuration.jwt.JwtUtils;
 import com.thegymgoers_java.app.configuration.services.UserDetailsImpl;
-import com.thegymgoers_java.app.controller.AuthController;
 import com.thegymgoers_java.app.model.User;
 import com.thegymgoers_java.app.payload.request.LoginRequest;
 import com.thegymgoers_java.app.payload.request.NewUserRequest;
@@ -12,8 +11,6 @@ import com.thegymgoers_java.app.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -23,12 +20,9 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import java.util.List;
 import java.util.Optional;
 
 import static org.mockito.ArgumentMatchers.any;
