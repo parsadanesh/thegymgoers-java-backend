@@ -1,6 +1,7 @@
 package com.thegymgoers_java.app.service;
 
 import com.thegymgoers_java.app.model.Workout;
+import com.thegymgoers_java.app.util.ValidationUtil;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import com.thegymgoers_java.app.model.User;
 import com.thegymgoers_java.app.repository.UserRepository;
@@ -26,10 +27,7 @@ public class UserService {
      */
     public User register(User user) {
         // Throws an exception if the user's email/username used to register is null or empty
-        if (user.getUsername() == null || user.getUsername().trim().isEmpty() ||
-                user.getEmailAddress() == null || user.getEmailAddress().trim().isEmpty()) {
-            throw new IllegalArgumentException("User details cannot not be empty or null");
-        }
+        ValidationUtil.validateUserDetails(user.getUsername(), user.getEmailAddress());
 
         // Returns null if a user already exists with the same email/username
         if (!userRepository.findByUsername(user.getUsername()).isEmpty() || !userRepository.findByEmailAddress(user.getEmailAddress()).isEmpty()) {
@@ -49,10 +47,8 @@ public class UserService {
      */
     public User login(User userLogin) {
         // Throws an exception if the user's email/username used to register is null or empty
-        if (userLogin.getUsername() == null || userLogin.getUsername().trim().isEmpty() ||
-                userLogin.getEmailAddress() == null || userLogin.getEmailAddress().trim().isEmpty()) {
-            throw new IllegalArgumentException("User details cannot not be empty or null");
-        }
+        ValidationUtil.validateUserDetails(userLogin.getUsername(), userLogin.getEmailAddress());
+
 
         // Checks if a user exists with the same username
         if (!userRepository.findByUsername(userLogin.getUsername()).isEmpty()) {
@@ -76,9 +72,7 @@ public class UserService {
      */
     public List<Workout> getWorkouts(String username) {
         // Throws an exception if the username is null or empty
-        if (username == null || username.trim().isEmpty()) {
-            throw new IllegalArgumentException("User details cannot not be empty or null");
-        }
+        ValidationUtil.validateUsername(username);
 
         User user = userRepository.findByUsername(username).get();
         return user.getWorkoutsList();
@@ -92,9 +86,7 @@ public class UserService {
      */
     public User addWorkout(String username, Workout workoutToAdd) {
         // Throws an exception if the username is null or empty
-        if (username == null || username.trim().isEmpty()) {
-            throw new IllegalArgumentException("User details cannot not be empty or null");
-        }
+        ValidationUtil.validateUsername(username);
 
         User user = userRepository.findByUsername(username).orElseThrow(() -> new IllegalArgumentException("User not found"));
         workoutToAdd.setDataCreated(LocalDateTime.now().toString());
@@ -110,9 +102,7 @@ public class UserService {
      */
     public User deleteWorkout(String username, String _id) {
         // Throws an exception if the username is null or empty
-        if (username == null || username.trim().isEmpty()) {
-            throw new IllegalArgumentException("User details cannot not be empty or null");
-        }
+        ValidationUtil.validateUsername(username);
 
         if (userRepository.findByUsername(username).isPresent()) {
             User user = userRepository.findByUsername(username).get();

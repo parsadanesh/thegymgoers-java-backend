@@ -42,4 +42,20 @@ public class GymGroupController {
         return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
     }
 
+    @PostMapping("/gymgroups/{username}/{groupName}")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    public ResponseEntity<?> joinGymGroup(@PathVariable String username, @PathVariable String groupName){
+        try {
+            GymGroup gymGroup = gymGroupService.joinGymGroup(username, groupName);
+
+            if (gymGroup != null) {
+                return new ResponseEntity<>(gymGroup, HttpStatus.OK);
+            }
+        }catch (Exception e){
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+
+        return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+    }
+
 }
