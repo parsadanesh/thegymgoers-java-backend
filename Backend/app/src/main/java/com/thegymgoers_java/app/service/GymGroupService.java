@@ -18,6 +18,13 @@ public class GymGroupService {
     UserRepository userRepository;
 
     public GymGroup createGymGroup(String username, NewGymGroupRequest newGymGroupRequest) throws Exception {
+        if (username == null || username.trim().isEmpty()) {
+            throw new IllegalArgumentException("User details cannot not be empty or null");
+        }
+
+        if (newGymGroupRequest.getGroupName() == null || newGymGroupRequest.getGroupName().trim().isEmpty()) {
+            throw new IllegalArgumentException("GymGroup must have a name");
+        }
 
         if(gymGroupRepository.findByGroupName(newGymGroupRequest.getGroupName()).isPresent()){
             throw new Exception("GymGroup with that name exists");

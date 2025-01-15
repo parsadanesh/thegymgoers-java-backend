@@ -133,6 +133,7 @@ public class AuthControllerTests {
 //            when(userRepository.findByUsername(newUserRequest.getUsername())).thenReturn(Optional.of(user));
 
 //            when(userRepository.save(user)).thenReturn(user);
+
             // Mocking a call to the api with registration with the same username
             // Asserting a unsuccessful 400 response
             mockMvc.perform(post("/api/auth/signup")

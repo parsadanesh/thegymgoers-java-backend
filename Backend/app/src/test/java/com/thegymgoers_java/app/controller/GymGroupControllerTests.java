@@ -6,6 +6,7 @@ import com.thegymgoers_java.app.model.User;
 import com.thegymgoers_java.app.payload.request.NewGymGroupRequest;
 import com.thegymgoers_java.app.service.GymGroupService;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -51,29 +52,78 @@ public class GymGroupControllerTests {
         user2 = new User("testname2", "testemail2@dom.com", "fakepass");
     }
 
-    @Test
-    @WithMockUser(username = "testname", roles = {"USER"})
-    void shouldReturn200CreatingNewGroup() throws Exception{
-        NewGymGroupRequest newGymGroupRequest = new NewGymGroupRequest();
-        newGymGroupRequest.setGroupName("testGroupUpdatedtesty");
-        newGymGroupRequest.setUsername("testname");
+    @Nested
+    class createGymGroup {
 
-        GymGroup mockGymGroup = new GymGroup();
-        mockGymGroup.set_id("67855bf37ecbd73ac508de53");
-        mockGymGroup.setGroupName("testGroupUpdatedtety");
-        mockGymGroup.addAdmins("677fc378a4b1fc5b9fd40411");
-        mockGymGroup.addMembers("677fc378a4b1fc5b9fd40411");
+        @Test
+        @WithMockUser(username = "testname", roles = {"USER"})
+        void shouldReturn200CreatingNewGroup() throws Exception{
+            NewGymGroupRequest newGymGroupRequest = new NewGymGroupRequest();
+            newGymGroupRequest.setGroupName("testGroupUpdatedtesty");
+            newGymGroupRequest.setUsername("testname");
 
-        when(gymGroupService.createGymGroup(anyString(), any(NewGymGroupRequest.class))).thenReturn(mockGymGroup);
+            GymGroup mockGymGroup = new GymGroup();
+            mockGymGroup.set_id("67855bf37ecbd73ac508de53");
+            mockGymGroup.setGroupName("testGroupUpdatedtety");
+            mockGymGroup.addAdmins("677fc378a4b1fc5b9fd40411");
+            mockGymGroup.addMembers("677fc378a4b1fc5b9fd40411");
 
-        System.out.println("mockGymGroup: " + newGymGroupRequest.toString());
+            when(gymGroupService.createGymGroup(anyString(), any(NewGymGroupRequest.class))).thenReturn(mockGymGroup);
 
-        mockMvc.perform(post("/gymgroups/{username}", user.getUsername())
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(newGymGroupRequest)))
-                .andExpect(status().isOk())
-                .andExpect(content().json(objectMapper.writeValueAsString(mockGymGroup)))
-                .andDo(print());
+            System.out.println("mockGymGroup: " + newGymGroupRequest.toString());
+
+            mockMvc.perform(post("/gymgroups/{username}", user.getUsername())
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content(objectMapper.writeValueAsString(newGymGroupRequest)))
+                    .andExpect(status().isOk())
+                    .andExpect(content().json(objectMapper.writeValueAsString(mockGymGroup)))
+                    .andDo(print());
+
+        }
+
+        @Test
+        @WithMockUser(username = "testname", roles = {"USER"})
+        void shouldReturn400CreatingInvalidGroupName() throws Exception{
+            // Arrange
+            NewGymGroupRequest newGymGroupRequest = new NewGymGroupRequest();
+            newGymGroupRequest.setGroupName("");
+            newGymGroupRequest.setUsername("testname");
+
+            // Mock
+            when(gymGroupService.createGymGroup(anyString(), any(NewGymGroupRequest.class))).thenThrow(new IllegalArgumentException("GymGroup must have a name"));
+
+            // Act & Assert
+            mockMvc.perform(post("/gymgroups/{username}", user.getUsername())
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content(objectMapper.writeValueAsString(newGymGroupRequest)))
+                    .andExpect(status().isBadRequest())
+//                .andExpect(content().string(org.hamcrest.Matchers.containsString("GymGroup must have a name")))
+                    .andExpect(content().json("{\"errors\":{\"groupName\":\"GymGroup must have a name\"}}"))
+                    .andDo(print());
+
+        }
+
+        @Test
+        @WithMockUser(username = "testname", roles = {"USER"})
+        void shouldReturn400CreatingInvalidUsername() throws Exception{
+            // Arrange
+            NewGymGroupRequest newGymGroupRequest = new NewGymGroupRequest();
+            newGymGroupRequest.setGroupName("validName");
+            newGymGroupRequest.setUsername("");
+
+            // Mock
+            when(gymGroupService.createGymGroup(anyString(), any(NewGymGroupRequest.class))).thenThrow(new IllegalArgumentException("GymGroup must have a name"));
+
+            // Act & Assert
+            mockMvc.perform(post("/gymgroups/{username}", user.getUsername())
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content(objectMapper.writeValueAsString(newGymGroupRequest)))
+                    .andExpect(status().isBadRequest())
+//                .andExpect(content().string(org.hamcrest.Matchers.containsString("GymGroup must have a name")))
+                    .andExpect(content().json("{\"errors\":{\"username\":\"must not be empty\"}}"))
+                    .andDo(print());
+
+        }
 
     }
 

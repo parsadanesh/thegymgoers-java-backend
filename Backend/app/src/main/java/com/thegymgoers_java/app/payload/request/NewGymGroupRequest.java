@@ -7,22 +7,22 @@ public class NewGymGroupRequest {
     @NotEmpty
     private String username;
 
-    @NotEmpty
+    @NotEmpty(message = "GymGroup must have a name")
     private String groupName;
 
     public @NotEmpty String getUsername() {
         return username;
     }
 
-    public void setUsername(String username){
+    public void setUsername(@NotEmpty String username) {
         this.username = username;
     }
 
-    public @NotEmpty String getGroupName() {
+    public @NotEmpty(message = "GymGroup must have a name") String getGroupName() {
         return groupName;
     }
 
-    public void setGroupName(@NotEmpty String groupName) {
+    public void setGroupName(@NotEmpty(message = "GymGroup must have a name") String groupName) {
         this.groupName = groupName;
     }
 

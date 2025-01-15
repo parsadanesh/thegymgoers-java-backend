@@ -15,8 +15,9 @@ public class GymGroup {
     @JsonProperty("_id")
     private String _id;
 
-    @NotEmpty
+
     @JsonProperty("groupName")
+    @NotEmpty(message = "GymGroup must have a name")
     private String groupName;
 
     @NotEmpty
