@@ -125,6 +125,72 @@ public class GymGroupControllerTests {
 
         }
 
+        @Test
+        @WithMockUser(username = "testname", roles = {"USER"})
+        void shouldReturn400CreatingNullUsername() throws Exception{
+            // Arrange
+            NewGymGroupRequest newGymGroupRequest = new NewGymGroupRequest();
+            newGymGroupRequest.setGroupName("validName");
+            newGymGroupRequest.setUsername(null);
+
+            // Mock
+            when(gymGroupService.createGymGroup(anyString(), any(NewGymGroupRequest.class))).thenThrow(new IllegalArgumentException("User details cannot not be empty or null"));
+
+            // Act & Assert
+            mockMvc.perform(post("/gymgroups/{username}", user.getUsername())
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content(objectMapper.writeValueAsString(newGymGroupRequest)))
+                    .andExpect(status().isBadRequest())
+//                .andExpect(content().string(org.hamcrest.Matchers.containsString("GymGroup must have a name")))
+                    .andExpect(content().json("{\"errors\":{\"username\":\"must not be empty\"}}"))
+                    .andDo(print());
+
+        }
+
+        @Test
+        @WithMockUser(username = "testname", roles = {"USER"})
+        void shouldReturnNull() throws Exception{
+            // Arrange
+            NewGymGroupRequest newGymGroupRequest = new NewGymGroupRequest();
+            newGymGroupRequest.setGroupName("validName");
+            newGymGroupRequest.setUsername("testuser");
+
+            // Mock
+            when(gymGroupService.createGymGroup(anyString(), any(NewGymGroupRequest.class))).thenReturn(null);
+
+            // Act & Assert
+            mockMvc.perform(post("/gymgroups/{username}", user.getUsername())
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content(objectMapper.writeValueAsString(newGymGroupRequest)))
+                    .andExpect(status().isBadRequest())
+//                .andExpect(content().string(org.hamcrest.Matchers.containsString("GymGroup must have a name")))
+                    .andExpect(content().string(""))
+                    .andDo(print());
+
+        }
+
+        @Test
+        @WithMockUser(username = "testname", roles = {"USER"})
+        void shouldReturn400CreatingNullGroupName() throws Exception{
+            // Arrange
+            NewGymGroupRequest newGymGroupRequest = new NewGymGroupRequest();
+            newGymGroupRequest.setGroupName("validname");
+            newGymGroupRequest.setUsername("testname");
+
+            // Mock
+            when(gymGroupService.createGymGroup(anyString(), any(NewGymGroupRequest.class))).thenThrow(new Exception("User not found"));
+
+            // Act & Assert
+            mockMvc.perform(post("/gymgroups/{username}", user.getUsername())
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content(objectMapper.writeValueAsString(newGymGroupRequest)))
+                    .andExpect(status().isBadRequest())
+//                .andExpect(content().string(org.hamcrest.Matchers.containsString("GymGroup must have a name")))
+                    .andExpect(content().string("User not found"))
+                    .andDo(print());
+
+        }
+
     }
 
 }

@@ -32,9 +32,16 @@ public class GymGroupService {
 
         GymGroup gymGroup = new GymGroup();
         gymGroup.setGroupName(newGymGroupRequest.getGroupName());
-        User admin = userRepository.findByUsername(username).get();
+        User admin;
+        if(userRepository.findByUsername(username).isPresent()){
+            admin = userRepository.findByUsername(username).get();
+        }else {
+            throw new Exception("User not found");
+        }
+
         gymGroup.addAdmins(admin.getId());
         gymGroup.addMembers(admin.getId());
+
         return gymGroupRepository.save(gymGroup);
     }
 }
