@@ -10,26 +10,30 @@ const ViewGroup = (props) => {
     const [memView, setMemView] = useState([]);
 
     const getMembers = async (e) => {
-        try {
-            const groupName = props.name;
-            const res = await axios.get("http://localhost:3000/getMembers", { params: {groupName} });
+        setGroupMembers(props.members);
+    //     try {
+    //         const groupName = props.name;
+    //         const res = await axios.get("http://localhost:3000/getMembers", { params: {groupName} });
 
-            setName(res.data.email)
+    //         setName(res.data.email)
             
             
-            if (res) {
-                setGroupMembers(res.data);
-            }
+    //         if (res) {
+    //             setGroupMembers(res.data);
+    //         }
             
-        } catch (e) {
-            console.log(e.message);
-        }
+    //     } catch (e) {
+    //         console.log(e.message);
+    //     }
     }
 
     const createMembersView = () => {
         let arr = [];
         groupMembers.forEach(member => {
-            arr.push(<MemberView email={member.email} workouts={member.workouts} />)
+            console.log(member);
+            
+
+            arr.push(<MemberView name={props.name} member={member} />)
         });
         if (arr.length > 0) {
             setMemView(arr);
@@ -47,7 +51,7 @@ const ViewGroup = (props) => {
 
     return (
         <ul className="list-group mt-3 d-flex flex-row">
-            <li className="list-group-item"> <strong>{props.name}</strong></li>
+            <li className="list-group-item"> <strong>{`Group Name: ${props.name}`}</strong></li>
             <li className="list-group-item">
                 {loaded && <>
                     Members: {memView}

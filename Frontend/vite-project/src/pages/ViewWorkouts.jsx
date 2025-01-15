@@ -10,14 +10,23 @@ const ViewWorkout = (props) => {
 
     const token = localStorage.getItem('token');
 
-    const handleDelete = async (exerciseID) => {
+    const handleDelete = async (workoutId) => {
+
+        console.log(token);
+        
         try {     
-            await axios.delete(`http://localhost:3000/deleteExercise`, { params: { email: props.user.email, exercise_id: exerciseID } });
-            const updatedWorkouts = workouts.map(workout => ({
-                ...workout,
-                exercises: workout.exercises.filter(exercise => exercise.id !== exerciseID)
-            }));
-            setWorkouts(updatedWorkouts);
+            await axios.delete(`http://localhost:4000/users/${props.user.username}/workouts/${workoutId}`, 
+                {
+                    headers: {
+                        Authorization: token
+                    }
+                });
+            
+            // const updatedWorkouts = workouts.map(workout => ({
+            //     ...workout,
+            //     exercises: workout.exercises.filter(exercise => exercise.id !== exerciseID)
+            // }));
+            // setWorkouts(updatedWorkouts);
 
         } catch (error) {
             console.error("Failed to delete exercise:", error.response?.data?.message || error.message);
@@ -68,20 +77,41 @@ const ViewWorkout = (props) => {
 
         // Sort dates and create display elements
         const tempDisplay = Object.keys(groupedByDate).sort((a, b) => new Date(b) - new Date(a)).map(date => (
-            
             <div className="d-flex flex-column align-items-center" key={date} style={{ border: '1px solid #ccc', margin: '10px', padding: '10px' }}>
                 <h2>{date}</h2>
-                {groupedByDate[date].map(workout => workout.exercises.map(exercise => {
-                    // console.log(workout._id);
-                    
-                    if (exercise.name !== "Cardio") {
-                        return <ViewWeightTraining key={workout._id + Math.random()} name={exercise.name} reps={exercise.reps} sets={exercise.sets} weight={exercise.weight} onDelete={() => handleDelete(exercise._id)} />;
-                    } else {
-                        return <ViewCardioTraining key={workout._id + Math.random()} name={exercise.name} duration={exercise.duration} onDelete={() => handleDelete(exercise._id)}/>;
-                    }
-                }))}
+                {groupedByDate[date].map(workout => (
+                    <div className="mt-2" key={workout._id+Math.random()}>
+                        <button className="btn btn-danger mt-2 mb-2" onClick={() => handleDelete(workout._id)}>Delete</button>
+                        {workout.exercises.map(exercise => {
+                                                
+                            if (exercise.name !== "Cardio") {
+                                return <ViewWeightTraining key={exercise._id} name={exercise.exerciseName} reps={exercise.reps} sets={exercise.sets} weight={exercise.weight} />;
+                            } else {
+                                return <ViewCardioTraining key={exercise._id} name={exercise.exerciseName} duration={exercise.duration} />;
+                            }
+                        })}
+                    </div>
+                ))}
             </div>
         ));
+
+
+        // const tempDisplay = Object.keys(groupedByDate).sort((a, b) => new Date(b) - new Date(a)).map(date => (
+            
+        //     <div className="d-flex flex-column align-items-center" key={date} style={{ border: '1px solid #ccc', margin: '10px', padding: '10px' }}>
+        //         <h2>{date}</h2>
+                
+        //         {groupedByDate[date].map(workout => workout.exercises.map(exercise => {
+        //             // console.log(workout._id);
+                    
+        //             if (exercise.name !== "Cardio") {
+        //                 return <ViewWeightTraining key={workout._id + Math.random()} name={exercise.name} reps={exercise.reps} sets={exercise.sets} weight={exercise.weight} onDelete={() => handleDelete(exercise._id)} />;
+        //             } else {
+        //                 return <ViewCardioTraining key={workout._id + Math.random()} name={exercise.name} duration={exercise.duration} onDelete={() => handleDelete(exercise._id)}/>;
+        //             }
+        //         }))}
+        //     </div>
+        // ));
         
         setDisplay(tempDisplay);
         setConsecutiveDays(calculateConsecutiveDays());
@@ -135,7 +165,7 @@ const ViewWorkout = (props) => {
     return (
         <div>
             <h2>Hello, here you can see your last 7 days of workouts</h2>
-            <h3>Number of Consecutive Days: {consecutiveDays}</h3>
+            <h3>Number of Consecutive Days: {consecutiveDays+1}</h3>
             
             {display.length > 0 && (
                 <div>{ display }</div>

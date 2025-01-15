@@ -3,13 +3,24 @@ import { useRef, useState } from "react";
 
 const JoinGymGroup = (props) => {
 
+    
+    const token = localStorage.getItem('token');
     const groupName = useRef();;
     const [setupMessage, setSetupMessage] = useState("");
 
     const joinGroup = async () => {
+        console.log(token);
+        
         try {            
-            const res = await axios.post("http://localhost:3000/joinGroup", { params: { userEmail: props.user.email, gymGroupName: groupName.current.value } });
-            if (res.status === 201) {
+            const res = await axios.post(`http://localhost:4000/gymgroups/${props.user.username}/${groupName.current.value}`, 
+                {},
+                {
+                    headers: {
+                        Authorization: token
+                    }
+                    
+                });
+            if (res.status === 200) {
                 console.log("joined");
                 setSetupMessage(`joined GymGroup: ${groupName.current.value}`);
                 setTimeout(() => setSetupMessage(""), 3000);

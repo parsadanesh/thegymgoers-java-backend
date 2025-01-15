@@ -5,30 +5,37 @@ import ViewGymGroups from "../components/ViewGymGroups";
 
 const GymGroupPage = (props) => {
 
+    const token = localStorage.getItem('token');
     const [gymGroups, setGymGroups] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
     const navigate = useNavigate();
 
 
-    // const getGroups = async (e) => {
-    //     try {
-    //         const res = await axios.get(`http://localhost:4000/gymgroups/${props.user.username}`, { params: props.user });
-
-    //         console.log(res.data);
+    const getGroups = async (e) => {
+        try {
+            const res = await axios.get(`http://localhost:4000/gymgroups/${props.user.username}`,{
+                    headers: {
+                        Authorization: token
+                    }
+                }
+            );
             
 
-    //         if (res) {
-    //             setGymGroups(res.data);
-    //             setIsLoaded(true)
-    //         }
+            console.log(res.data);
             
-    //     } catch (e) {
-    //         console.log(e.response?.data?.message);
-    //     }
-    // }
+
+            if (res) {
+                setGymGroups(res.data);
+                setIsLoaded(true)
+            }
+            
+        } catch (e) {
+            console.log(e.response?.data?.message);
+        }
+    }
     
     useEffect(() => {
-        // getGroups();
+        getGroups();
     }, []);
     
 

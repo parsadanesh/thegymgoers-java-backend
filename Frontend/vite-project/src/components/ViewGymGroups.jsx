@@ -10,9 +10,11 @@ const ViewGymGroups = (props) => {
     const createView = () => {
         if (props.groups?.length > 0) {
             let arr1 = [];
+            
 
             props.groups.forEach(group => {
-                arr1.push(<ViewGroup name={group.name} />)
+                
+                arr1.push(<ViewGroup name={group.groupName} members={group.members} />)
             });
 
             
