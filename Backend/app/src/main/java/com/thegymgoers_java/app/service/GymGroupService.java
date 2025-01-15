@@ -2,12 +2,15 @@ package com.thegymgoers_java.app.service;
 
 import com.thegymgoers_java.app.model.GymGroup;
 import com.thegymgoers_java.app.model.User;
+import com.thegymgoers_java.app.model.Workout;
 import com.thegymgoers_java.app.payload.request.NewGymGroupRequest;
 import com.thegymgoers_java.app.repository.GymGroupRepository;
 import com.thegymgoers_java.app.repository.UserRepository;
 import com.thegymgoers_java.app.util.ValidationUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class GymGroupService {
@@ -46,8 +49,8 @@ public class GymGroupService {
         }
 
         // Add user as admin and member of the GymGroup
-        gymGroup.addAdmins(admin.getId());
-        gymGroup.addMembers(admin.getId());
+        gymGroup.addAdmins(admin.getUsername());
+        gymGroup.addMembers(admin.getUsername());
 
         // Save and return the new GymGroup
         return gymGroupRepository.save(gymGroup);
@@ -69,10 +72,43 @@ public class GymGroupService {
         if(userRepository.findByUsername(username).isPresent() && gymGroupRepository.findByGroupName(groupName).isPresent()){
             gymGroup = gymGroupRepository.findByGroupName(groupName).get();
             user = userRepository.findByUsername(username).get();
-            gymGroup.addMembers(user.getId());
+            gymGroup.addMembers(user.getUsername());
             return gymGroupRepository.save(gymGroup);
         } else {
             throw new Exception("User not found || GymGroup not found");
         }
+    }
+
+    public List<GymGroup> getGymGroups(String username) throws Exception {
+        ValidationUtil.validateUsername(username);
+        User user;
+
+        if(userRepository.findByUsername(username).isPresent()){
+            user = userRepository.findByUsername(username).get();
+        }else {
+            throw new Exception("User not found");
+        }
+
+        List<GymGroup> gymGroups = gymGroupRepository.findAllByMembersContains(user.getUsername());
+
+        return gymGroups;
+
+    }
+
+    public List<Workout> getUsersWorkouts(String username) throws Exception {
+        ValidationUtil.validateUsername(username);
+
+        User user;
+
+        if(userRepository.findByUsername(username).isPresent()){
+            user = userRepository.findByUsername(username).get();
+        }else {
+            throw new Exception("User not found");
+        }
+
+        List<Workout> workoutList = user.getWorkoutsList();
+
+        return workoutList;
+
     }
 }
