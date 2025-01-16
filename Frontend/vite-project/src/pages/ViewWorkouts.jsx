@@ -35,7 +35,7 @@ const ViewWorkout = (props) => {
 
     const getWorkouts = async (e) => {
         try {
-            const res = await axios.get(`http://localhost:4000/users/users/${props.user.username}/workouts`, {
+            const res = await axios.get(`http://localhost:4000/users/${props.user.username}/workouts`, {
             headers: {
                 Authorization: token
             }
