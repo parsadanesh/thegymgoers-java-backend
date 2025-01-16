@@ -1,14 +1,24 @@
-# Use an official OpenJDK runtime as a parent image
-FROM openjdk:17-jdk-slim
-
-# Set the working directory in the container
+# Use an official Maven image to build the application
+FROM maven:3.8.5-openjdk-17 AS build
 WORKDIR /app
 
-# Copy the project JAR file into the container at /app
-COPY target/app-0.0.1-SNAPSHOT.jar app.jar
+# Copy the pom.xml and download dependencies
+COPY pom.xml .
+RUN mvn dependency:go-offline
 
-# Make port 4000 available to the world outside this container
+# Copy the source code and build the application
+COPY src ./src
+RUN mvn package -DskipTests
+
+# Use an official OpenJDK image to run the application
+FROM openjdk:17-jdk-slim
+WORKDIR /app
+
+# Copy the built application from the previous stage
+COPY --from=build /app/target/*.jar app.jar
+
+# Expose the port the application runs on
 EXPOSE 4000
 
-# Run the JAR file
+# Run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
