@@ -114,7 +114,7 @@
 # Create a stage for resolving and downloading dependencies.
 FROM openjdk:23-jdk-slim AS deps
 
-WORKDIR /build
+WORKDIR /app
 
 # Copy the mvnw wrapper with executable permissions.
 COPY --chmod=0755 hegymgoers-java-backend/Backend/app/mvnw mvnw
