@@ -9,7 +9,7 @@
 ################################################################################
 
 # Create a stage for resolving and downloading dependencies.
-FROM eclipse-temurin:17-jre-jammy as deps
+FROM openjdk:23-jdk-slim as deps
 
 WORKDIR /build
 
