@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: gymgoers-app
-    plan: free
-    dockerfilePath: Dockerfile
-    runtime: docker
-    envVars:
-      - key: PORT
-        value: 4000
