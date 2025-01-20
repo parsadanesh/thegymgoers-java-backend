@@ -102,24 +102,19 @@
 #
 #ENTRYPOINT [ "java", "org.springframework.boot.loader.launch.JarLauncher" ]
 
-
-# syntax=docker/dockerfile:1
-
-################################################################################
-
-# syntax=docker/dockerfile:1
+## syntax=docker/dockerfile:1
 
 ################################################################################
 
 # Create a stage for resolving and downloading dependencies.
 FROM openjdk:23-jdk-slim AS deps
 
-WORKDIR /app
+WORKDIR /build
 
 # Copy the mvnw wrapper with executable permissions.
-COPY --chmod=0755 hegymgoers-java-backend/Backend/app/mvnw mvnw
-COPY hegymgoers-java-backend/Backend/app/.mvn/ .mvn/
-COPY hegymgoers-java-backend/Backend/app/pom.xml pom.xml
+COPY --chmod=0755 mvnw mvnw
+COPY .mvn/ .mvn/
+COPY pom.xml pom.xml
 # Ensure pom.xml is copied
 
 # Download dependencies as a separate step to take advantage of Docker's caching.
@@ -135,7 +130,7 @@ FROM deps AS package
 
 WORKDIR /build
 
-COPY hegymgoers-java-backend/Backend/app/src src/
+COPY src src/
 RUN --mount=type=bind,source=pom.xml,target=pom.xml \
     --mount=type=cache,target=/root/.m2 \
     ./mvnw package -DskipTests && \
