@@ -11,8 +11,17 @@ services:
   server:
     build:
       context: .
+      dockerfile: thegymgoers-java-backend/Backend/app/Dockerfile
     ports:
       - 4000:4000
+    environment:
+      - spring.application.name=app
+      - server.port=4000
+      - spring.data.mongodb.database=gymgoers
+      - spring.data.mongodb.uri=mongodb+srv://gg-developer:pass@gymgoers.9eiuj0z.mongodb.net/?retryWrites=true&w=majority&appName=gymgoers
+      - gymgoer.app.jwtSecret= ======================GG========================================
+      - gymgoer.app.jwtExpirationMs=86400000
+
 
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to
