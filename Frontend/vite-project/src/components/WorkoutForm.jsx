@@ -19,7 +19,7 @@ const WorkoutForm = (props) => {
     const logWorkout = async (e) => {
         try {
 
-            const res = await axios.post(`https://gymgoers-spring.onrender.com/${props.user.username}/workouts`, 
+            const res = await axios.post(`https://gymgoers-spring.onrender.com/users/${props.user.username}/workouts`, 
                 {
                     exercises: exercises,
                     dateCreated: ""
