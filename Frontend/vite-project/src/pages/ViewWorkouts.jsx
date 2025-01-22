@@ -15,7 +15,7 @@ const ViewWorkout = (props) => {
         console.log(token);
         
         try {     
-            await axios.delete(`http://localhost:4000/users/${props.user.username}/workouts/${workoutId}`, 
+            await axios.delete(`https://gymgoers-spring.onrender.com/users/${props.user.username}/workouts/${workoutId}`, 
                 {
                     headers: {
                         Authorization: token
@@ -35,7 +35,7 @@ const ViewWorkout = (props) => {
 
     const getWorkouts = async (e) => {
         try {
-            const res = await axios.get(`http://localhost:4000/users/${props.user.username}/workouts`, {
+            const res = await axios.get(`https://gymgoers-spring.onrender.com/users/${props.user.username}/workouts`, {
             headers: {
                 Authorization: token
             }

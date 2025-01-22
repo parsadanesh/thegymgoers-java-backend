@@ -13,7 +13,7 @@ const GymGroupPage = (props) => {
 
     const getGroups = async (e) => {
         try {
-            const res = await axios.get(`http://localhost:4000/gymgroups/${props.user.username}`,{
+            const res = await axios.get(`https://gymgoers-spring.onrender.com/gymgroups/${props.user.username}`,{
                     headers: {
                         Authorization: token
                     }

@@ -47,7 +47,7 @@ function App() {
     try {
       console.log("user: " + newUser.password);
 
-      const res = await axios.post(`http://localhost:4000/api/auth/signup`, 
+      const res = await axios.post(`https://gymgoers-spring.onrender.com/api/auth/signup`, 
       {
         username: newUser.username,
         emailAddress: newUser.email,
@@ -74,7 +74,7 @@ function App() {
 
   const sendLogin = async (e) => {
       try {
-        const res = await axios.post(`http://localhost:4000/api/auth/signin`, 
+        const res = await axios.post(`https://gymgoers-spring.onrender.com/api/auth/signin`, 
           {
             username: user.username,
             password: user.password
