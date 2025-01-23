@@ -12,7 +12,7 @@ const JoinGymGroup = (props) => {
         console.log(token);
         
         try {            
-            const res = await axios.post(`http://localhost:4000/gymgroups/${props.user.username}/${groupName.current.value}`, 
+            const res = await axios.post(`https://gymgoers-spring.onrender.com/${props.user.username}/${groupName.current.value}`, 
                 {},
                 {
                     headers: {

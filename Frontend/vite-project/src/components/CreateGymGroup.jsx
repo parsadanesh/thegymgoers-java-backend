@@ -30,7 +30,7 @@ const CreateGymGroup = (props) => {
     const createGroup = async (e) => {
         console.log(token);
         try {
-            const res = await axios.post(`http://localhost:4000/gymgroups/${props.user.username}`, 
+            const res = await axios.post(`https://gymgoers-spring.onrender.com/gymgroups/${props.user.username}`, 
                 {
                     username: props.user.username,
                     groupName: groupName.current.value

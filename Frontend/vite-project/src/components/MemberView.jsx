@@ -69,7 +69,7 @@ const MemberView = (props) => {
         // console.log(props.member.username);
         
         try {
-            const res = await axios.get(`http://localhost:4000/gymgroups/group/${props.name}`,
+            const res = await axios.get(`https://gymgoers-spring.onrender.com/gymgroups/group/${props.name}`,
         
                 {
                     headers: {
