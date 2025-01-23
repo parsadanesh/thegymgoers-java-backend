@@ -15,14 +15,13 @@ This is a Java and Spring boot implementation of The Gymgoers backend.
 
 ## About The Project
 
-For my first full-stack project I created an application called [The GymGoers](https://github.com/parsadanesh/TheGymGoers/blob/main/ProjectREADME.md) using the `MERN` stack (`MongoDB`, `ExpressJS`, `ReactJS`, `NodeJS`).
+For my first full-stack project I created an application called [The GymGoers](https://github.com/parsadanesh/TheGymGoers/blob/main/ProjectREADME.md) and I did this using the `MERN` stack (`MongoDB`, `ExpressJS`, `ReactJS`, `NodeJS`).
 
-This project is a `Java` and `Spring` implementation of the backend for The GymGoers. I have been given the opportunity to create a project in Java and Spring Boot to showcase. 
+This project is a `Java` and `Spring` implementation of the backend for my app called: `The GymGoers`. I have recently been given the opportunity to create a project in Java and Spring Boot to showcase. 
 
-As this was my first time using Spring Boot in general, I wanted to create a project that would really help solidify my 
-knowledge and skills with Spring and Spring Boot. By performing a migration of the backend from the MERN stack to Spring Boot 
-it provided me with an opportunity to understand the similarities and differences between the frameworks. Still, it would also give 
-me a chance to improve on my previous implementation and reevaluate my previous decisions made due to inexperience.
+As this was my first time using Spring, I wanted to create a project that would really help me solidify my 
+knowledge and skills with Spring and Spring Boot. I thought that performing a migration of the backend from the MERN stack to Spring Boot 
+would provide me with an opportunity to understand the similarities and differences between the technologies, helping me better understand how to use Spring and also get a better understanding of the technologies I have already used like creating REST APIs. I am also using this opportunity as a chance to improve on my previous implementation and reevaluate previous decisions I made due to inexperience.
 
 ## Technologies Used
 
