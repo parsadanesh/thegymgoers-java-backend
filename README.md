@@ -44,14 +44,23 @@ To run the frontend (you must be in the same directory as the package.json when 
 ### Install Dependencies
 - Once in the correct directory type, `npm install`
 ### Run The Development Server
-- `npm run dev`
+- Type: `npm run dev`
 ## Run Tests
-- npm run coverage
+- Type: `npm run coverage`
 
 To run the backend you can either use an IDE and run the main method or use docker:
-### Build the Docker image
-= type: `docker build -t parsadanesh20/app:latest .`
-### Run the Docker Container
-- type: docker run -p 8080:8080 parsadanesh20/app:latest
-  
+### Clone the Repository
+- `git clone <repository-url>`
+- `cd <repository-directory>`
 
+## Using Docker 
+### Build the Docker image
+- Type: `docker build -t parsadanesh20/app:latest .`
+### Run the Docker Container
+- Type: `docker run -p 8080:8080 parsadanesh20/app:latest`
+
+## Using Maven
+### Build Project
+- `mvn clean install`
+### Run the Application
+- `mvn spring-boot:run`
