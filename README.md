@@ -45,7 +45,7 @@ To run the frontend (you must be in the same directory as the package.json when 
 - Once in the correct directory type, `npm install`
 ### Run The Development Server
 - Type: `npm run dev`
-## Run Tests
+### Run Tests
 - Type: `npm run coverage`
 
 To run the backend you can either use an IDE and run the main method or use docker:
