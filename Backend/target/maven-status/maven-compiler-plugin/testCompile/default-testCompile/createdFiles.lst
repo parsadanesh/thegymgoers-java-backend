@@ -1,0 +1,17 @@
+com\thegymgoers_java\app\controller\UserControllerTests$addWorkout.class
+com\thegymgoers_java\app\controller\UserControllerTests.class
+com\thegymgoers_java\app\service\UserServiceTests$deleteWorkout.class
+com\thegymgoers_java\app\controller\AuthControllerTests.class
+com\thegymgoers_java\app\controller\GymGroupControllerTests.class
+com\thegymgoers_java\app\controller\UserControllerTests$getWorkout.class
+com\thegymgoers_java\app\service\UserServiceTests.class
+com\thegymgoers_java\app\controller\UserControllerTests$deleteWorkout.class
+com\thegymgoers_java\app\AppApplicationTests.class
+com\thegymgoers_java\app\controller\AuthControllerTests$RegisterTests.class
+com\thegymgoers_java\app\service\UserServiceTests$getWorkout.class
+com\thegymgoers_java\app\controller\AuthControllerTests$LoginTests.class
+com\thegymgoers_java\app\controller\GymGroupControllerTests$createGymGroup.class
+com\thegymgoers_java\app\service\GymGroupServiceTests.class
+com\thegymgoers_java\app\service\UserServiceTests$addWorkout.class
+com\thegymgoers_java\app\service\UserServiceTests$registerUser.class
+com\thegymgoers_java\app\service\UserServiceTests$loginUser.class

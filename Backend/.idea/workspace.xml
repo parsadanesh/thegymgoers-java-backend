@@ -4,33 +4,61 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30e1a45c-3b5d-468e-af24-79e816783350" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/payload/request/NewGymGroupRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/thegymgoers_java/app/GymGroupControllerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/UserContoller.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/controller/UserContoller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/Exercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/Exercise.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/GymGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/GymGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/Workout.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/model/Workout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/thegymgoers_java/app/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/thegymgoers_java/app/UserControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/thegymgoers_java/app/UserControllerTests.java" afterDir="false" />
+    <list default="true" id="e718e2bc-3157-42ab-959a-e38b490ce730" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/app-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/app-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/app-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/app-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/thegymgoers_java/app/configuration/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/thegymgoers_java/app/configuration/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.AppApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.AppApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.controller.AuthControllerTests$LoginTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.controller.AuthControllerTests$LoginTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.controller.AuthControllerTests$RegisterTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.controller.AuthControllerTests$RegisterTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.controller.AuthControllerTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.controller.AuthControllerTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.controller.GymGroupControllerTests$createGymGroup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.controller.GymGroupControllerTests$createGymGroup.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.controller.GymGroupControllerTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.controller.GymGroupControllerTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.controller.UserControllerTests$addWorkout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.controller.UserControllerTests$addWorkout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.controller.UserControllerTests$getWorkout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.controller.UserControllerTests$getWorkout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.controller.UserControllerTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.controller.UserControllerTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.service.GymGroupServiceTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.service.GymGroupServiceTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.service.UserServiceTests$addWorkout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.service.UserServiceTests$addWorkout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.service.UserServiceTests$deleteWorkout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.service.UserServiceTests$deleteWorkout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.service.UserServiceTests$getWorkout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.service.UserServiceTests$getWorkout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.service.UserServiceTests$loginUser.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.service.UserServiceTests$loginUser.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.service.UserServiceTests$registerUser.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.service.UserServiceTests$registerUser.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.service.UserServiceTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.thegymgoers_java.app.service.UserServiceTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.AppApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.AppApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.controller.AuthControllerTests$LoginTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.controller.AuthControllerTests$LoginTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.controller.AuthControllerTests$RegisterTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.controller.AuthControllerTests$RegisterTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.controller.AuthControllerTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.controller.AuthControllerTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.controller.GymGroupControllerTests$createGymGroup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.controller.GymGroupControllerTests$createGymGroup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.controller.GymGroupControllerTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.controller.GymGroupControllerTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.controller.UserControllerTests$addWorkout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.controller.UserControllerTests$addWorkout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.controller.UserControllerTests$getWorkout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.controller.UserControllerTests$getWorkout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.controller.UserControllerTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.controller.UserControllerTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.service.GymGroupServiceTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.service.GymGroupServiceTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.service.UserServiceTests$addWorkout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.service.UserServiceTests$addWorkout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.service.UserServiceTests$deleteWorkout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.service.UserServiceTests$deleteWorkout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.service.UserServiceTests$getWorkout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.service.UserServiceTests$getWorkout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.service.UserServiceTests$loginUser.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.service.UserServiceTests$loginUser.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.service.UserServiceTests$registerUser.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.service.UserServiceTests$registerUser.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.service.UserServiceTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.thegymgoers_java.app.service.UserServiceTests.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="0" />
+  </component>
   <component name="ExportToHTMLSettings">
     <option name="OPEN_IN_BROWSER" value="true" />
-    <option name="OUTPUT_DIRECTORY" value="C:\Users\44747\SE_Training\thegymgoers-java-backend\htmlReport" />
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\44747\SE_Training\thegymgoers-java-backend\Backend\app\htmlReport" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="package-info" />
-        <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -38,57 +66,67 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
+  &quot;associatedIndex&quot;: 4
 }</component>
-  <component name="ProjectId" id="2qMA4rddzF7xIpsqbJfl2iRVjuU" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
+  <component name="ProjectId" id="2rZuj5BL6sVLiOFCTCqkd6gAP5j" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AppApplication.executor": "Run",
-    "JUnit.AuthControllerTests and 1 more.executor": "Coverage",
-    "JUnit.AuthControllerTests$LoginTests.checkWhenPasswordDontMatch.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.createUserWithSameEmail.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.shouldReturn200IfLoginSuccessful.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.shouldReturn200IfUsernamePasswordMatch.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.shouldReturn400IfEmailAddressDoesNotMatch.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUserDoesNotMatch.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUsernameDoesNotMatch.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUsernameIsEmpty.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUsernameIsNull.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.shouldReturn401IfUsernameDoesNotMatc.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.shouldReturn401IfUsernameDoesNotMatch.executor": "Run",
-    "JUnit.AuthControllerTests$RegisterTests.createUserHttpRequest.executor": "Run",
-    "JUnit.AuthControllerTests$RegisterTests.createUserWithNullUsername.executor": "Run",
-    "JUnit.AuthControllerTests$RegisterTests.createUserWithSameEmail.executor": "Run",
-    "JUnit.AuthControllerTests$RegisterTests.createUserWithSameUsername.executor": "Run",
-    "JUnit.AuthControllerTests$RegisterTests.creatingNullUser.executor": "Run",
-    "JUnit.AuthControllerTests$RegisterTests.executor": "Run",
-    "JUnit.AuthControllerTests.executor": "Coverage",
-    "JUnit.UserControllerTests.createUserHttpRequest.executor": "Run",
-    "JUnit.UserControllerTests.createUserWithSameUsername.executor": "Run",
-    "JUnit.UserControllerTests.creatingNullUser.executor": "Run",
-    "JUnit.UserControllerTests.executor": "Run",
-    "JUnit.UserControllerTests.shouldReturn200WhenAddingAWorkout.executor": "Run",
-    "JUnit.UserControllerTests.shouldReturn400WhenAddingInvalidWorkout.executor": "Run",
-    "JUnit.UserControllerTests.shouldReturnEmptyArray.executor": "Run",
-    "JUnit.UserControllerTests.shouldReturnValidationMessageWhenExerciseNameIsEmpty.executor": "Run",
-    "JUnit.UserControllerTests.shouldReturnValidationMessageWhenExercisesEmpty.executor": "Run",
-    "JUnit.UserControllerTests.shouldReturnValidationMessageWhenExercisesListIsEmpty.executor": "Run",
-    "Maven.app [test].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/44747/SE_Training/thegymgoers-java-backend"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AppApplication.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GymGroupControllerTests$createGymGroup.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GymGroupControllerTests$createGymGroup.shouldReturn400CreatingNullGroupName.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GymGroupControllerTests$createGymGroup.shouldReturn400CreatingNullUsername.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GymGroupControllerTests$createGymGroup.shouldReturnNull.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GymGroupControllerTests.shouldReturn200CreatingNewGroup.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GymGroupControllerTests.shouldReturn400CreatingInvalidGroup.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GymGroupControllerTests.shouldReturn400CreatingInvalidGroupName.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GymGroupControllerTests.shouldReturn400CreatingInvalidUsername.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GymGroupServiceTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTests$deleteWorkout.shouldReturnEmptyArray.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTests$getWorkout.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTests$getWorkout.shouldReturnEmptyArray.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTests$getWorkout.shouldReturnNullInvalidUsername.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests$addWorkout.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests$deleteWorkout.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests$deleteWorkout.testDeleteWorkout_WorkoutNotFound.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests$getWorkout.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests$loginUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests$registerUser.testRegisterUser_EmailAlreadyExists.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.testRegisterUser_EmptyEmail.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.testRegisterUser_NullEmail.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.app in app.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.com.thegymgoers_java.app in app.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.java in app.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.app [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.app [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.app [install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/44747/SE_Training/gymgoers-render&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.thegymgoers_java.app.controller" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.AppApplication">
     <configuration name="AppApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.AppApplication" />
@@ -103,49 +141,46 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AuthControllerTests and 1 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GymGroupControllerTests$createGymGroup.shouldReturnNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
-      <option name="TEST_OBJECT" value="pattern" />
-      <patterns>
-        <pattern testClass="com.thegymgoers_java.app.AuthControllerTests" />
-        <pattern testClass="com.thegymgoers_java.app.UserControllerTests" />
-      </patterns>
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.thegymgoers_java.app.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.thegymgoers_java.app.controller.GymGroupControllerTests" />
+      <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.controller.GymGroupControllerTests$createGymGroup" />
+      <option name="METHOD_NAME" value="shouldReturnNull" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserControllerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserControllerTests$getWorkout" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.thegymgoers_java.app.*" />
+          <option name="PATTERN" value="com.thegymgoers_java.app.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.thegymgoers_java.app" />
-      <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.UserControllerTests" />
+      <option name="PACKAGE_NAME" value="com.thegymgoers_java.app.controller.UserControllerTests" />
+      <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.controller.UserControllerTests$getWorkout" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserControllerTests.shouldReturnValidationMessageWhenExercisesEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="app in app" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.thegymgoers_java.app.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.thegymgoers_java.app" />
-      <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.UserControllerTests" />
-      <option name="METHOD_NAME" value="shouldReturnValidationMessageWhenExercisesEmpty" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java/com/thegymgoers_java/app" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserControllerTests.shouldReturnValidationMessageWhenExercisesListIsEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="com.thegymgoers_java.app in app" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
         <pattern>
@@ -154,9 +189,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.thegymgoers_java.app" />
-      <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.UserControllerTests" />
-      <option name="METHOD_NAME" value="shouldReturnValidationMessageWhenExercisesListIsEmpty" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -164,28 +197,25 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.AppApplication" />
-        <item itemvalue="JUnit.UserControllerTests" />
-        <item itemvalue="JUnit.AuthControllerTests and 1 more" />
-        <item itemvalue="JUnit.UserControllerTests.shouldReturnValidationMessageWhenExercisesListIsEmpty" />
-        <item itemvalue="JUnit.UserControllerTests.shouldReturnValidationMessageWhenExercisesEmpty" />
+        <item itemvalue="JUnit.com.thegymgoers_java.app in app" />
+        <item itemvalue="JUnit.UserControllerTests$getWorkout" />
+        <item itemvalue="JUnit.app in app" />
+        <item itemvalue="JUnit.GymGroupControllerTests$createGymGroup.shouldReturnNull" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="30e1a45c-3b5d-468e-af24-79e816783350" name="Changes" comment="" />
-      <created>1734461882069</created>
+      <changelist id="e718e2bc-3157-42ab-959a-e38b490ce730" name="Changes" comment="" />
+      <created>1736779049467</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1734461882069</updated>
+      <updated>1736779049467</updated>
     </task>
     <servers />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/thegymgoers_java_backend$AuthControllerTests_and_1_more.ic" NAME="AuthControllerTests and 1 more Coverage Results" MODIFIED="1736773375370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
-    <SUITE FILE_PATH="coverage/thegymgoers_java_backend$AuthControllerTests.ic" NAME="AuthControllerTests Coverage Results" MODIFIED="1736437921476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>com.thegymgoers_java.app.*</FILTER>
-    </SUITE>
+    <SUITE FILE_PATH="coverage/app$app_in_app.ic" NAME="app in app Coverage Results" MODIFIED="1736947459640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

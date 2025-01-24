@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.thegymgoers_java.app.controller.AuthControllerTests
+-------------------------------------------------------------------------------
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.100 s -- in com.thegymgoers_java.app.controller.AuthControllerTests

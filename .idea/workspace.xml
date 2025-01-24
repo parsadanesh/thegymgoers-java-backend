@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30e1a45c-3b5d-468e-af24-79e816783350" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/vite-project/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/vite-project/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/app/.dockerignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/app/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/app/README.Docker.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/app/compose.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/app/src/main/java/com/thegymgoers_java/app/configuration/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/app/src/main/java/com/thegymgoers_java/app/configuration/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/app/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/app/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,46 +45,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AppApplication.executor": "Run",
-    "JUnit.AuthControllerTests and 1 more.executor": "Coverage",
-    "JUnit.AuthControllerTests$LoginTests.checkWhenPasswordDontMatch.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.createUserWithSameEmail.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.shouldReturn200IfLoginSuccessful.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.shouldReturn200IfUsernamePasswordMatch.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.shouldReturn400IfEmailAddressDoesNotMatch.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUserDoesNotMatch.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUsernameDoesNotMatch.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUsernameIsEmpty.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUsernameIsNull.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.shouldReturn401IfUsernameDoesNotMatc.executor": "Run",
-    "JUnit.AuthControllerTests$LoginTests.shouldReturn401IfUsernameDoesNotMatch.executor": "Run",
-    "JUnit.AuthControllerTests$RegisterTests.createUserHttpRequest.executor": "Run",
-    "JUnit.AuthControllerTests$RegisterTests.createUserWithNullUsername.executor": "Run",
-    "JUnit.AuthControllerTests$RegisterTests.createUserWithSameEmail.executor": "Run",
-    "JUnit.AuthControllerTests$RegisterTests.createUserWithSameUsername.executor": "Run",
-    "JUnit.AuthControllerTests$RegisterTests.creatingNullUser.executor": "Run",
-    "JUnit.AuthControllerTests$RegisterTests.executor": "Run",
-    "JUnit.AuthControllerTests.executor": "Coverage",
-    "JUnit.UserControllerTests.createUserHttpRequest.executor": "Run",
-    "JUnit.UserControllerTests.createUserWithSameUsername.executor": "Run",
-    "JUnit.UserControllerTests.creatingNullUser.executor": "Run",
-    "JUnit.UserControllerTests.executor": "Run",
-    "JUnit.UserControllerTests.shouldReturn200WhenAddingAWorkout.executor": "Run",
-    "JUnit.UserControllerTests.shouldReturn400WhenAddingInvalidWorkout.executor": "Run",
-    "JUnit.UserControllerTests.shouldReturnEmptyArray.executor": "Run",
-    "JUnit.UserControllerTests.shouldReturnValidationMessageWhenExerciseNameIsEmpty.executor": "Run",
-    "JUnit.UserControllerTests.shouldReturnValidationMessageWhenExercisesEmpty.executor": "Run",
-    "JUnit.UserControllerTests.shouldReturnValidationMessageWhenExercisesListIsEmpty.executor": "Run",
-    "Maven.app [test].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/44747/SE_Training/thegymgoers-java-backend/Backend/app"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AppApplication.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests and 1 more.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.AuthControllerTests$LoginTests.checkWhenPasswordDontMatch.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests$LoginTests.createUserWithSameEmail.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests$LoginTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests$LoginTests.shouldReturn200IfLoginSuccessful.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests$LoginTests.shouldReturn200IfUsernamePasswordMatch.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests$LoginTests.shouldReturn400IfEmailAddressDoesNotMatch.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUserDoesNotMatch.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUsernameDoesNotMatch.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUsernameIsEmpty.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests$LoginTests.shouldReturn400IfUsernameIsNull.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests$LoginTests.shouldReturn401IfUsernameDoesNotMatc.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests$LoginTests.shouldReturn401IfUsernameDoesNotMatch.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests$RegisterTests.createUserHttpRequest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests$RegisterTests.createUserWithNullUsername.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests$RegisterTests.createUserWithSameEmail.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests$RegisterTests.createUserWithSameUsername.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests$RegisterTests.creatingNullUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests$RegisterTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthControllerTests.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.UserControllerTests.createUserHttpRequest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTests.createUserWithSameUsername.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTests.creatingNullUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTests.shouldReturn200WhenAddingAWorkout.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTests.shouldReturn400WhenAddingInvalidWorkout.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTests.shouldReturnEmptyArray.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTests.shouldReturnValidationMessageWhenExerciseNameIsEmpty.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTests.shouldReturnValidationMessageWhenExercisesEmpty.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserControllerTests.shouldReturnValidationMessageWhenExercisesListIsEmpty.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.app [test].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/44747/SE_Training/thegymgoers-java-backend/Backend/app&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.AppApplication">
     <configuration name="AppApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.thegymgoers_java.app.AppApplication" />
