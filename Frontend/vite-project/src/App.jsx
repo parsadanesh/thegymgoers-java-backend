@@ -139,7 +139,7 @@ function App() {
 
       {loading && <div className="loading">Loading...</div>}
 
-      {/* <Footer /> */}
+      <Footer />
     </div> 
   )
 }
