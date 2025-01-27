@@ -1,4 +1,4 @@
-/* :root {
+:root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -69,9 +69,9 @@ button:focus-visible {
 
 .container{
   height: 100vh;
-} */
+}
 
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -165,4 +165,4 @@ button:focus-visible {
   /* Add a red border to all elements for debugging */
   background-color: rgba(255, 0, 0, 0.1);
   /* Add a light red background to all elements for debugging */
-}
+} */
