@@ -144,6 +144,14 @@ const ViewWorkout = (props) => {
             createViewWorkout();
             
         }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const allElements = document.querySelectorAll("*");
+            allElements.forEach((element) => {
+                console.log(element);
+            });
+        });
+        
     }, [workouts]);
 
     return (
