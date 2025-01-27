@@ -47,7 +47,6 @@ function App() {
     try {
       console.log("user: " + newUser.password);
 
-      console.log(import.meta.env.VITE_APP_GYMBACKEND);
       
       const res = await axios.post(`${import.meta.env.VITE_APP_GYMBACKEND}/api/auth/signup`, 
       {
@@ -65,7 +64,7 @@ function App() {
       }, 1000);
       }
     } catch (e) {
-      // console.log(e.response.data);
+      console.log(e.response.data);
       setRegistrationMessage('Registration failed. Please try again.');
       setTimeout(() => {
         setRegistrationMessage('');
