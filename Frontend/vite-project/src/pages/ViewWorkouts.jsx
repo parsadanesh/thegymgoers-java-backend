@@ -10,6 +10,8 @@ const ViewWorkout = (props) => {
 
     const token = localStorage.getItem('token');
 
+    const cardioExercises = ["Running", "Swimming", "Cycling", "Walking", "HIIT"]
+
     const handleDelete = async (workoutId) => {
 
         console.log(token);
@@ -84,7 +86,7 @@ const ViewWorkout = (props) => {
                         <button className="btn btn-danger mt-2 mb-2" onClick={() => handleDelete(workout._id)}>Delete</button>
                         {workout.exercises.map(exercise => {
                                                 
-                            if (exercise.name !== "Cardio") {
+                            if (cardioExercises.includes(exercise.exerciseName) !== "Cardio") {
                                 return <ViewWeightTraining key={exercise._id} name={exercise.exerciseName} reps={exercise.reps} sets={exercise.sets} weight={exercise.weight} />;
                             } else {
                                 return <ViewCardioTraining key={exercise._id} name={exercise.exerciseName} duration={exercise.duration} />;
