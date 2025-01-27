@@ -86,7 +86,7 @@ const ViewWorkout = (props) => {
                         <button className="btn btn-danger mt-2 mb-2" onClick={() => handleDelete(workout._id)}>Delete</button>
                         {workout.exercises.map(exercise => {
                                                 
-                            if (cardioExercises.includes(exercise.exerciseName) !== "Cardio") {
+                            if (!(cardioExercises.includes(exercise.exerciseName))) {
                                 return <ViewWeightTraining key={exercise._id} name={exercise.exerciseName} reps={exercise.reps} sets={exercise.sets} weight={exercise.weight} />;
                             } else {
                                 return <ViewCardioTraining key={exercise._id} name={exercise.exerciseName} duration={exercise.time} />;
@@ -97,24 +97,6 @@ const ViewWorkout = (props) => {
             </div>
         ));
 
-
-        // const tempDisplay = Object.keys(groupedByDate).sort((a, b) => new Date(b) - new Date(a)).map(date => (
-            
-        //     <div className="d-flex flex-column align-items-center" key={date} style={{ border: '1px solid #ccc', margin: '10px', padding: '10px' }}>
-        //         <h2>{date}</h2>
-                
-        //         {groupedByDate[date].map(workout => workout.exercises.map(exercise => {
-        //             // console.log(workout._id);
-                    
-        //             if (exercise.name !== "Cardio") {
-        //                 return <ViewWeightTraining key={workout._id + Math.random()} name={exercise.name} reps={exercise.reps} sets={exercise.sets} weight={exercise.weight} onDelete={() => handleDelete(exercise._id)} />;
-        //             } else {
-        //                 return <ViewCardioTraining key={workout._id + Math.random()} name={exercise.name} duration={exercise.duration} onDelete={() => handleDelete(exercise._id)}/>;
-        //             }
-        //         }))}
-        //     </div>
-        // ));
-        
         setDisplay(tempDisplay);
         setConsecutiveDays(calculateConsecutiveDays());
         
