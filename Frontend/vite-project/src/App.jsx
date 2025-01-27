@@ -64,10 +64,8 @@ function App() {
       }, 1000);
       }
     } catch (e) {
-      var message = e.response.data;
-      console.log(message);
       
-      // setRegistrationMessage(e.response.data);
+      setRegistrationMessage(e.response.data.message);
       setTimeout(() => {
         setRegistrationMessage('');
       }, 3000);
