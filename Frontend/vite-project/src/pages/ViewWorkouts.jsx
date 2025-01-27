@@ -89,7 +89,7 @@ const ViewWorkout = (props) => {
                             if (cardioExercises.includes(exercise.exerciseName) !== "Cardio") {
                                 return <ViewWeightTraining key={exercise._id} name={exercise.exerciseName} reps={exercise.reps} sets={exercise.sets} weight={exercise.weight} />;
                             } else {
-                                return <ViewCardioTraining key={exercise._id} name={exercise.exerciseName} duration={exercise.duration} />;
+                                return <ViewCardioTraining key={exercise._id} name={exercise.exerciseName} duration={exercise.time} />;
                             }
                         })}
                     </div>
