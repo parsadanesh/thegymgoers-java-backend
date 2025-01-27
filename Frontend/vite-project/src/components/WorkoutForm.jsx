@@ -65,7 +65,7 @@ const WorkoutForm = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setWorkout({ exercises: exercises });
-        setSuccessMessage('Your workout has been successfully submitted!');
+        setSuccessMessage('Your workout has been successfully submit`ted!');
         setTimeout(() => {
             setSuccessMessage('');
         }, 3000);
@@ -86,37 +86,53 @@ const WorkoutForm = (props) => {
         <div className="container container-md mt-3 bg-light">
             <h1>Welcome {props.user.email}</h1>
             <form onSubmit={handleSubmit}>
-            <div className="row d-flex justify-content-center">
-                <div className=" col-12 col-sm-8 col-md-6 col-lg-4">
-                    <select className="form-control" onChange={handleExerciseChange}>
-                        <option value="-1">Select an exercise</option>
-                        <optgroup label="Chest">
-                            <option value="0">Flat DB Chest Press</option>
-                            <option value="0">Incline DB Chest Press</option>
-                            <option value="0">Flat Barbell Chest Press</option>
-                            <option value="0">Incline Barbell Chest Press</option>
-                        </optgroup>
-                        <optgroup label="Legs">
-                            <option value="0">Squat</option>
-                            <option value="0">Leg Extension</option>
-                            <option value="0">Leg Press</option>
-                        </optgroup>
-                        <optgroup label="Back">
-                            <option value="0">Lat Pulldown</option>
-                            <option value="0">Barbell Row</option>
-                            <option value="0">Chest-Supported Row</option>
-                        </optgroup>
-                        <optgroup label="Shoulders">
-                            <option value="0">DB Overhead Press</option>
-                            <option value="0">Lateral Raise</option>
-                        </optgroup>
-                        <optgroup label="Arms">
-                            <option value="0">DB Curl</option>
-                        </optgroup>
-                        <optgroup label="Cardio">
-                            <option value="1">Cardio</option>
-                        </optgroup>
-                    </select>
+                <div className="row d-flex justify-content-center">
+                    <div className=" col-12 col-sm-8 col-md-6 col-lg-4">
+                        <select className="form-control" onChange={handleExerciseChange}>
+                            <option value="-1">Select an exercise</option>    
+                            <optgroup label="Chest">
+                                <option value="0">Chest Fly</option>    
+                                <option value="0">Flat Barbell Chest` Press</option>
+                                <option value="0">Flat DB Chest Press</option>
+                                <option value="0">Incline Barbell Chest Press</option>
+                                <option value="0">Incline DB Chest Press</option>
+                            </optgroup>
+                            <optgroup label="Legs">
+                                <option value="0">Calf Raises</option>
+                                <option value="0">Hack Squat</option>
+                                <option value="0">Leg Extension</option>
+                                <option value="0">Leg Press</option>
+                                <option value="0">Romanian Deadlifts (RDL's)</option>
+                                <option value="0">Squat</option>
+                            </optgroup>
+                            <optgroup label="Back">
+                                <option value="0">Barbell Row</option>
+                                <option value="0">Chest-Supported Row</option>
+                                <option value="0">Cable Pullover</option>
+                                <option value="0">DB Rows</option>
+                                <option value="0">Face Pull</option>
+                                <option value="0">Lat Pulldown</option>
+                                <option value="0">Pull Ups</option>
+                            </optgroup>
+                            <optgroup label="Shoulders">
+                                <option value="0">Barbell Overhead Press</option>
+                                <option value="0">DB Overhead Press</option>
+                                <option value="0">Lateral Raise</option>
+                                <option value="0">Read Delt Fly</option>
+                            </optgroup>
+                            <optgroup label="Arms">
+                                <option value="0">DB Curl</option>
+                                <option value="0">Hammer Curl</option>
+                            </optgroup>
+                            <optgroup label="Cardio">
+                                <option value="1">Cardio</option>
+                                <option value="1">Cycling</option>
+                                <option value="1">Running</option>
+                                <option value="1">High-intensity interval training (HIIT)</option>
+                                <option value="1">Swimming</option>
+                                <option value="1">Walking</option>
+                            </optgroup>
+                        </select>
                     </div> 
                 </div>
             <button type="submit" className="btn btn-primary mt-3" disabled={!workRef}>Add a new workout</button>
