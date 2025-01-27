@@ -14,7 +14,7 @@ const ViewWorkout = (props) => {
 
     const handleDelete = async (workoutId) => {
 
-        console.log(token);
+        // console.log(token);
         
         try {     
             await axios.delete(`${import.meta.env.VITE_APP_GYMBACKEND}/users/${props.user.username}/workouts/${workoutId}`, 
@@ -23,12 +23,6 @@ const ViewWorkout = (props) => {
                         Authorization: token
                     }
                 });
-            
-            // const updatedWorkouts = workouts.map(workout => ({
-            //     ...workout,
-            //     exercises: workout.exercises.filter(exercise => exercise.id !== exerciseID)
-            // }));
-            // setWorkouts(updatedWorkouts);
 
         } catch (error) {
             console.error("Failed to delete exercise:", error.response?.data?.message || error.message);

@@ -65,7 +65,7 @@ const WorkoutForm = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setWorkout({ exercises: exercises });
-        setSuccessMessage('Your workout has been successfully submit`ted!');
+        setSuccessMessage('Your workout has been successfully submitted!');
         setTimeout(() => {
             setSuccessMessage('');
         }, 3000);
