@@ -20,6 +20,7 @@ function App() {
   const [newUser, setNewUser] = useState({ username: "", email: "", password: "", });
   const [user, setUser] = useState({ username: "", password: "", });
   const [registrationMessage, setRegistrationMessage] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate()
 
@@ -44,9 +45,8 @@ function App() {
   }, [loggedIn])
 
   const registerUser = async (e) => {
+    setLoading(true);
     try {
-      console.log("user: " + newUser.password);
-
       
       const res = await axios.post(`${import.meta.env.VITE_APP_GYMBACKEND}/api/auth/signup`, 
       {
@@ -69,7 +69,8 @@ function App() {
       setTimeout(() => {
         setRegistrationMessage('');
       }, 3000);
-      
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -132,6 +133,9 @@ function App() {
         </Routes>
         
       )}
+
+      {loading && <div className="loading">Loading...</div>}
+      
       <Footer />
     </div> 
   )
