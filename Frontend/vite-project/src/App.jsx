@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './App.css'
 
 import axios from "axios";
@@ -22,7 +22,8 @@ function App() {
   const [registrationMessage, setRegistrationMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     if (user.password !== undefined && user.username !== ""  && user.username !== null && user.password !== "") {
@@ -121,17 +122,8 @@ function App() {
         </div>
       )}
 
-      {!loggedIn &&
-        (
-          <Routes>
-            <Route path="/login" element={<LoginPage setUser={setUser} setLoggedIn={setLoggedIn} registrationMessage={registrationMessage} /> } />
-            
-            <Route path="/sign-up" element={<RegisterPage setNewUser={setNewUser} registrationMessage={registrationMessage}/>} />
-            
-          </Routes>
-        )
-        &&
-        <>
+      {location.pathname === '/' &&
+      <>
         <h1 className='mt-5 text-success fw-bold'>GymGoers - Simple Fitness</h1>
 
         <h1 className='m-5'>Welcome to GymGoers - This is an app where you can keep track of your workouts and challenge yourself.</h1>
@@ -154,7 +146,7 @@ function App() {
           <Route path="/viewWorkouts" element={<ViewWorkout user={user} />} />
         </Routes>
       )}
-      {/* {!loggedIn && (
+      {!loggedIn && (
 
         <Routes>
           <Route path="/login" element={<LoginPage setUser={setUser} setLoggedIn={setLoggedIn} registrationMessage={registrationMessage} /> } />
@@ -164,7 +156,7 @@ function App() {
         </Routes>
         
         
-      )} */}
+      )}
 
       
 
