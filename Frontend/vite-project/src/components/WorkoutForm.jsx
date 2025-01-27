@@ -13,9 +13,9 @@ const WorkoutForm = (props) => {
     const [exercises, setExercises] = useState([]);
     const [workRef, setWorkRef] = useState(false);
     const [successMessage, setSuccessMessage] = useState(''); 
-    const [cardioTraining, setCardioTraining] = useState({ name: "", duration: "" });
+    const [cardioTraining, setCardioTraining] = useState({ exerciseName: "", time: "" });
     const [weightTraining, setWeightTraining] = useState({ name: "", reps: "", sets: "", weight: "" });
-    
+
     const logWorkout = async (e) => {
         try {
 
@@ -57,7 +57,7 @@ const WorkoutForm = (props) => {
     }, [weightTraining]);
 
     useEffect(() => {
-        if (cardioTraining.name || weightTraining.duration ) {
+        if (cardioTraining.exerciseName || weightTraining.time ) {
             setExercises(prevWorkout => [...prevWorkout, cardioTraining]);
         }
     }, [cardioTraining]);
@@ -92,7 +92,7 @@ const WorkoutForm = (props) => {
                             <option value="-1">Select an exercise</option>    
                             <optgroup label="Chest">
                                 <option value="0">Chest Fly</option>    
-                                <option value="0">Flat Barbell Chest` Press</option>
+                                <option value="0">Flat Barbell Chest Press</option>
                                 <option value="0">Flat DB Chest Press</option>
                                 <option value="0">Incline Barbell Chest Press</option>
                                 <option value="0">Incline DB Chest Press</option>

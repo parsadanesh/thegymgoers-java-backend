@@ -10,8 +10,8 @@ const CardioTraining = (props) => {
 
         if (props.selectedOptionText && durationRef) {
             props.setCardioTraining({
-                name: props.selectedOptionText,
-                duration: durationRef
+                exerciseName: props.selectedOptionText,
+                time: durationRef
             });
         }
         setDurationRef("");
