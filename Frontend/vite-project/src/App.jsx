@@ -25,7 +25,7 @@ function App() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (user.username !== "" || user.password !== "") {
+    if (user.username !== ""  || user.username !== undefined|| user.password !== "") {
       console.log("user changed", user);
       sendLogin();
     }
@@ -112,6 +112,14 @@ function App() {
     <div className='container d-flex flex-column' style={{ width: '100%', height: '100vh' }}>
       <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
       
+      {loading && (
+        <div className="loading">
+          <div className="spinner"></div>
+          <p>Loading, please wait</p>
+        </div>
+      )}
+      
+
 
       {loggedIn && (
         <Routes>
@@ -137,7 +145,7 @@ function App() {
         
       )}
 
-      {loading && <div className="loading">Loading...</div>}
+      
 
       <Footer />
     </div> 
