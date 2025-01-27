@@ -26,11 +26,7 @@ function App() {
 
   useEffect(() => {
     if (user.username !== ""  || user.username !== null|| user.password !== "") {
-      console.log("user changed", user);
-      console.log(user.username);
-      console.log(user.password);
-      
-      
+      console.log("user changed", user);      
       sendLogin();
     }
   }, [user]);
