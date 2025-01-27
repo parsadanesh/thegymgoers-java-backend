@@ -116,7 +116,7 @@ function App() {
       
       {loading && (
         <div className="loading">
-          <div className="spinner container d-flex d-lg-flex"></div>
+          <div className="spinner"></div>
           <p>Loading, please wait</p>
         </div>
       )}
