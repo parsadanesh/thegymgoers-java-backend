@@ -64,8 +64,7 @@ function App() {
       }, 1000);
       }
     } catch (e) {
-      console.log(e.response.data);
-      setRegistrationMessage('Registration failed. Please try again.');
+      setRegistrationMessage(e.response.data);
       setTimeout(() => {
         setRegistrationMessage('');
       }, 3000);
