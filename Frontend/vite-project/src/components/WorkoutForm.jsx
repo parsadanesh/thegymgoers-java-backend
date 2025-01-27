@@ -96,6 +96,7 @@ const WorkoutForm = (props) => {
                                 <option value="0">Flat DB Chest Press</option>
                                 <option value="0">Incline Barbell Chest Press</option>
                                 <option value="0">Incline DB Chest Press</option>
+                                <option value="0">Pushups</option>
                             </optgroup>
                             <optgroup label="Legs">
                                 <option value="0">Calf Raises</option>
@@ -118,16 +119,23 @@ const WorkoutForm = (props) => {
                                 <option value="0">Barbell Overhead Press</option>
                                 <option value="0">DB Overhead Press</option>
                                 <option value="0">Lateral Raise</option>
+                                <option value="0">Machine Shoulder Press</option>
                                 <option value="0">Read Delt Fly</option>
                             </optgroup>
                             <optgroup label="Arms">
                                 <option value="0">DB Curl</option>
+                                <option value="0">Dips</option>
                                 <option value="0">Hammer Curl</option>
+                                <option value="0">Machine Dips</option>
+                                <option value="0">Machine Curls</option>
+                                <option value="0">Overhead Tricep Extension</option>
+                                <option value="0">Tricep Pushdown</option>
                             </optgroup>
                             <optgroup label="Cardio">
                                 <option value="1">Cycling</option>
                                 <option value="1">Running</option>
                                 <option value="1">High-intensity interval training (HIIT)</option>
+                                <option value=" ">Stairmaster</option>
                                 <option value="1">Swimming</option>
                                 <option value="1">Walking</option>
                             </optgroup>
