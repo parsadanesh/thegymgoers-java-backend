@@ -153,7 +153,6 @@ const ViewWorkout = (props) => {
             
             {display.length > 0 && (
                 <div>{ display }</div>
-
             )}
             
         </div>
