@@ -47,7 +47,7 @@ function App() {
     try {
       console.log("user: " + newUser.password);
 
-      const res = await axios.post(`https://gymgoers-spring.onrender.com/api/auth/signup`, 
+      const res = await axios.post(`${import.meta.env.VITE_APP_GYMBACKEND}/api/auth/signup`, 
       {
         username: newUser.username,
         emailAddress: newUser.email,
@@ -55,7 +55,7 @@ function App() {
         role: ["user"] || []
       });
       
-      if (res.status === 201) {
+      if (res.status === 200) {
         setRegistrationMessage('User successfully registered!');
         setTimeout(() => {
           navigate("/login")
@@ -74,7 +74,7 @@ function App() {
 
   const sendLogin = async (e) => {
       try {
-        const res = await axios.post(`https://gymgoers-spring.onrender.com/api/auth/signin`, 
+        const res = await axios.post(`${import.meta.env.VITE_APP_GYMBACKEND}/api/auth/signin`, 
           {
             username: user.username,
             password: user.password
