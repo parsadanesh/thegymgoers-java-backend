@@ -47,7 +47,7 @@ function App() {
     try {
       console.log("user: " + newUser.password);
 
-      const res = await axios.post(`${import.meta.env.VITE_APP_GYMBACKEND}/api/auth/signup`, 
+      const res = await axios.post(`https://gymgoers-spring.onrender.com/api/auth/signup`, 
       {
         username: newUser.username,
         emailAddress: newUser.email,
