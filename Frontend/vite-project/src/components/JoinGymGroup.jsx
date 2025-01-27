@@ -12,7 +12,7 @@ const JoinGymGroup = (props) => {
         console.log(token);
         
         try {            
-            const res = await axios.post(`${import.meta.env.VITE_APP_GYMBACKEND}/${props.user.username}/${groupName.current.value}`, 
+            const res = await axios.post(`${import.meta.env.VITE_APP_GYMBACKEND}/gymgroups/${props.user.username}/${groupName.current.value}`, 
                 {},
                 {
                     headers: {
