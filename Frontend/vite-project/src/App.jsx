@@ -75,6 +75,7 @@ function App() {
   }
 
   const sendLogin = async (e) => {
+    setLoading(true);
       try {
         const res = await axios.post(`${import.meta.env.VITE_APP_GYMBACKEND}/api/auth/signin`, 
           {
@@ -101,6 +102,8 @@ function App() {
         setTimeout(() => {
         setRegistrationMessage('');
       }, 3000);
+      } finally {
+        setLoading(false);
       }
   }
 
@@ -135,7 +138,7 @@ function App() {
       )}
 
       {loading && <div className="loading">Loading...</div>}
-      
+
       <Footer />
     </div> 
   )

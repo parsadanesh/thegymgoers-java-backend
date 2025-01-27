@@ -125,7 +125,6 @@ const WorkoutForm = (props) => {
                                 <option value="0">Hammer Curl</option>
                             </optgroup>
                             <optgroup label="Cardio">
-                                <option value="1">Cardio</option>
                                 <option value="1">Cycling</option>
                                 <option value="1">Running</option>
                                 <option value="1">High-intensity interval training (HIIT)</option>
