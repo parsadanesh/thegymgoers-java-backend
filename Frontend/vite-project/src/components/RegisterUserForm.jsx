@@ -16,7 +16,7 @@ const RegisterUserForm = (props) => {
     return (
         <form onSubmit={handleSubmit}>
             <div style={{ marginBottom: '20px' }}>
-                <label htmlFor="email" style={{ marginRight: '10px' }}>Email: </label>
+                <label htmlFor="username" style={{ marginRight: '10px' }}>Username: </label>
                 <input
                 data-testid="email"
                 type="username"
