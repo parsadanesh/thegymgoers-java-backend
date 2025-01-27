@@ -80,7 +80,7 @@ const ViewWorkout = (props) => {
         // Sort dates and create display elements
         const tempDisplay = Object.keys(groupedByDate).sort((a, b) => new Date(b) - new Date(a)).map(date => (
             <div className="d-flex flex-column align-items-center" key={date} style={{ border: '1px solid #ccc', margin: '10px', padding: '10px' }}>
-                <h2>{date}</h2>
+                <h2 style={{ color: 'darkgreen' }}>{date}</h2>
                 {groupedByDate[date].map(workout => (
                     <div className="mt-2" key={workout._id+Math.random()}>
                         <button className="btn btn-danger mt-2 mb-2" onClick={() => handleDelete(workout._id)}>Delete</button>
