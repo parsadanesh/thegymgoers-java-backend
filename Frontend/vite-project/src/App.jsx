@@ -25,10 +25,8 @@ function App() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (user !== undefined, user.username !== ""  || user.username !== null|| user.password !== "") {
+    if (user.password !== undefined, user.username !== ""  || user.username !== null|| user.password !== "") {
       console.log("user changed", user);
-      console.log(user);
-      
       sendLogin();
     }
   }, [user]);
