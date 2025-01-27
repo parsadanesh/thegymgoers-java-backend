@@ -90,20 +90,32 @@ const WorkoutForm = (props) => {
                 <div className=" col-12 col-sm-8 col-md-6 col-lg-4">
                     <select className="form-control" onChange={handleExerciseChange}>
                         <option value="-1">Select an exercise</option>
-                        <option value="0">Flat DB Chest Press</option>
-                        <option value="0">Incline DB Chest Press</option>
-                        <option value="0">Flat Barbell Chest Press</option>
-                        <option value="0">Incline Barbell Chest Press</option>
-                        <option value="0">Squat</option>
-                        <option value="0">Lat Pulldown</option>
-                        <option value="0">DB Overhead Press</option>
-                        <option value="0">Barbell Row</option>
-                        <option value="0">Chest-Supported Row</option>
-                        <option value="0">Lateral Raise</option>
-                        <option value="0">Leg Extension</option>
-                        <option value="0">Leg Press</option>
-                        <option value="0">DB Curl</option>
-                        <option value ="1">Cardio</option>
+                        <optgroup label="Chest">
+                            <option value="0">Flat DB Chest Press</option>
+                            <option value="0">Incline DB Chest Press</option>
+                            <option value="0">Flat Barbell Chest Press</option>
+                            <option value="0">Incline Barbell Chest Press</option>
+                        </optgroup>
+                        <optgroup label="Legs">
+                            <option value="0">Squat</option>
+                            <option value="0">Leg Extension</option>
+                            <option value="0">Leg Press</option>
+                        </optgroup>
+                        <optgroup label="Back">
+                            <option value="0">Lat Pulldown</option>
+                            <option value="0">Barbell Row</option>
+                            <option value="0">Chest-Supported Row</option>
+                        </optgroup>
+                        <optgroup label="Shoulders">
+                            <option value="0">DB Overhead Press</option>
+                            <option value="0">Lateral Raise</option>
+                        </optgroup>
+                        <optgroup label="Arms">
+                            <option value="0">DB Curl</option>
+                        </optgroup>
+                        <optgroup label="Cardio">
+                            <option value="1">Cardio</option>
+                        </optgroup>
                     </select>
                     </div> 
                 </div>
