@@ -6,9 +6,6 @@ const ViewCardioTraining = ({name, duration, onDelete}) => {
         <ul className="list-group mt-3 d-flex flex-row">
             <li className="list-group-item"> <strong>{name}</strong></li>
             <li className="list-group-item">Duration (Minutes): <strong>{duration}</strong></li>
-            <li className="list-group-item">
-                <button className="btn btn-danger" onClick={onDelete} >Delete</button>
-            </li>
         </ul>
         
     )
