@@ -1,0 +1,18 @@
+/* General footer styles */
+footer {
+    width: 100%;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    footer {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
