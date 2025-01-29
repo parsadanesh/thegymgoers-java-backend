@@ -123,16 +123,13 @@ function App() {
       )}
 
       {location.pathname === '/' &&
-      <>
+        <>
         <h1 className='mt-5 text-success fw-bold'>GymGoers - Simple Fitness</h1>
-
         <h1 className='m-5'>Welcome to GymGoers - This is an app where you can keep track of your workouts and challenge yourself.</h1>
         <h3 className='m-5'>Please Login in or sign up to use our application</h3>
-
-      </>}
+        </>
+      }
       
-
-
       {loggedIn && (
         <Routes>
           <Route path="/log" element={<WorkoutForm user={user} />} />
@@ -146,19 +143,15 @@ function App() {
           <Route path="/viewWorkouts" element={<ViewWorkout user={user} />} />
         </Routes>
       )}
+
       {!loggedIn && (
 
         <Routes>
           <Route path="/login" element={<LoginPage setUser={setUser} setLoggedIn={setLoggedIn} registrationMessage={registrationMessage} /> } />
           
           <Route path="/sign-up" element={<RegisterPage setNewUser={setNewUser} registrationMessage={registrationMessage}/>} />
-          
         </Routes>
-        
-        
       )}
-
-      
 
       <Footer />
     </div> 

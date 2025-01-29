@@ -5,14 +5,12 @@ const MemberView = (props) => {
     
     const token = localStorage.getItem('token');
     const [consecutiveDays, setConsecutiveDays] = useState(0);
+    const [weeklyTotal, setWeeklyTotal] = useState(0);
     const [workouts, setWorkouts] = useState([]);
 
-    const getMember = async () => {
-        // console.log(token);
-        // console.log(props.member.username);
-        
+    const calculateWeeklyTotal = async () => {
         try {
-            const res = await axios.get(`${import.meta.env.VITE_APP_GYMBACKEND}/gymgroups/group/${props.name}`,
+            const res = await axios.get(`${import.meta.env.VITE_APP_GYMBACKEND}/users/${props.member}/weeklytotal`,
         
                 {
                     headers: {
@@ -26,18 +24,35 @@ const MemberView = (props) => {
                 }
             
             );
-            // console.log(res);
-            setWorkouts(res.data);
-            
+
+            setWeeklyTotal(res.data);
         } catch (e) {
             console.log(e.message);
             
         }
+    }
 
+    const getMember = async () => {
+        try {
+            const res = await axios.get(`${import.meta.env.VITE_APP_GYMBACKEND}/gymgroups/group/${props.name}`,
+                {
+                    headers: {
+                    Authorization: token
+                    },
+                    
+                    params: {
+                        username: props.member
+                        
+                }});
+            setWorkouts(res.data);
+        } catch (e) {
+            console.log(e.message);
+        }
     }
 
     useEffect(() => {
         getMember();
+        calculateWeeklyTotal();
     }, []);
 
     const calculateConsecutiveDays = () => {
@@ -88,6 +103,7 @@ const MemberView = (props) => {
         <div>
             <h4>{`User: ${props.member}, `}</h4>
             <h4>{`Days Consecutive: ${consecutiveDays}`}</h4>
+            <h4>{`Weekly Total: ${weeklyTotal} kg`}</h4>
         </div>
     );
 };
