@@ -11,18 +11,11 @@ const MemberView = (props) => {
     const calculateWeeklyTotal = async () => {
         try {
             const res = await axios.get(`${import.meta.env.VITE_APP_GYMBACKEND}/users/${props.member}/weeklytotal`,
-        
                 {
                     headers: {
                     Authorization: token
-                    },
-                    
-                    params: {
-                        username: props.member
-                        
-                }
-                }
-            
+                    }    
+                }          
             );
 
             setWeeklyTotal(res.data);
@@ -34,16 +27,12 @@ const MemberView = (props) => {
 
     const getMember = async () => {
         try {
-            const res = await axios.get(`${import.meta.env.VITE_APP_GYMBACKEND}/gymgroups/group/${props.name}`,
+            const res = await axios.get(`${import.meta.env.VITE_APP_GYMBACKEND}/users/${props.member}/workouts`,
                 {
                     headers: {
                     Authorization: token
-                    },
-                    
-                    params: {
-                        username: props.member
-                        
-                }});
+                    }
+                });
             setWorkouts(res.data);
         } catch (e) {
             console.log(e.message);
